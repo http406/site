@@ -1,0 +1,813 @@
+<!--
+
+╱╭━━┳━┳━┳╮               
+━┫╱┓┣┳━━━╯                       
+╱╱╱┃┃╯                              
+━┫╱╰┛╯
+╱╰━━━╯
+DISCLAIMER: The code is for educational purposes only. You can use it for educational purposes only not for commercial uses.
+
+░░╔══╗░░░░░░░░░░╔══╗░░ ░╚╣▐▐╠╝░░╔══╗░░╚╣▐▐╠╝░
+░░╚╦╦╝░░╚╣▌▌╠╝░░╚╦╦╝░░ ░░░╚╚░░░░╚╦╦╝░░░░╚╚░░░
+░░░░░░░░░░╝╝░░░░░░░░░░
+
+💕Detail abt the project:
+
+Series Name: SOLOpedia
+Project Name: Euler's number, e
+Project No: #2
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Euler's number, e
+    </title>
+    <meta charset="utf-8">
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js" integrity="sha512-ALoawPS0JxHQ+8dGL7htZIlVNRaE/SN9gHD4G8pJJTi9H4BQ/3PjdvhggSGR34g00mvTPFkxQuveQUsJA5664Q==" crossorigin="anonymous"></script>
+        <style>
+            
+
+body {
+    background-color: #fff;
+    color: #000;
+}
+
+section{ 
+color:red;
+text-size:x-large; 
+text-align:center;
+}
+
+a:link {
+    
+    text-decoration: none;
+}
+
+#pre{
+    color: blue;
+}
+
+hr{
+    
+    text-shadow:0 0 2px black;
+    
+}
+
+hr{
+  display:block;
+  margin:0 auto;
+  height:3px;
+  width:300px;
+  border:none;
+  border-radius: 1px;
+  border-left:10px solid #000;
+  border-right:10px solid #fff;
+  animation: KITTAnim 1s infinite ease-in-out alternate;
+}
+
+hr:before{
+  content:" ";
+  display:inline-block;
+  width:15px;
+  height:15px;
+  border-left:15px solid #000;
+  border-right:15px solid #fff;
+  animation: KITTAnimBefore 1s infinite ease-in-out alternate;
+}
+
+hr:after{
+  content:" ";
+  display:inline-block;
+  width:15px;
+  height:15px;
+  border-left:15px solid #300000;
+  background-color:#fff;
+  border-right:15px solid #300000;
+  animation: KITTAnimAfter 1s infinite ease-in-out alternate;
+}
+
+hr:nth-child(even)
+{
+  animation: KARRAnim 1s infinite ease-in-out alternate;
+}
+
+hr:nth-child(even):after
+{
+  animation: KARRAnimAfter 1s infinite ease-in-out alternate;
+}
+
+hr:nth-child(even):before
+{
+  animation: KARRAnimBefore 1s infinite ease-in-out alternate;
+}
+
+/**
+    Keyframes
+Do not try at home
+
+**/
+
+
+@keyframes KITTAnim {
+   0% {
+      background-color:#000;
+      border-left:15px solid #fff;
+      border-right:15px solid #000;
+   }
+   10% {
+      background-color:#663a82;
+      border-left:15px solid #f00000;
+      border-right:15px solid #663a82;
+   }
+   20% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   30% {
+      background-color:#663a82;
+      border-left:15px solid #a00000;
+      border-right:15px solid #663a82;
+   }
+   40% {
+      background-color:#663a82;
+      border-left:15px solid #600000;
+      border-right:15px solid #663a82;
+   }
+   50% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   60% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   70% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   80% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   90% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   100% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+}
+
+@keyframes KITTAnimBefore {
+   0% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   10% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   20% {
+      background-color:#663a82;
+      border-left:15px solid #f00000;
+      border-right:15px solid #663a82;
+   }
+   30% {
+      background-color:#f00000;
+      border-left:15px solid #c00000;
+      border-right:15px solid #c00000;
+   }
+   40% {
+      background-color:#c00000;
+      border-left:15px solid #a00000;
+      border-right:15px solid #f00000;
+   }
+   50% {
+      background-color:#a00000;
+      border-left:15px solid #600000;
+      border-right:15px solid #c00000;
+   }
+   60% {
+      background-color:#600000;
+      border-left:15px solid #300000;
+      border-right:15px solid #a00000;
+   }
+   70% {
+      background-color:#300000;
+      border-left:15px solid #300000;
+      border-right:15px solid #600000;
+   }
+   80% {
+      background-color:#300000;
+      border-left:15px solid #300000;
+      border-right:15px solid #300000;
+   }
+   90% {
+      background-color:#300000;
+      border-left:15px solid #300000;
+      border-right:15px solid #300000;
+   }
+   100% {
+      background-color:#300000;
+      border-left:15px solid #300000;
+      border-right:15px solid #300000;
+   }
+}
+
+@keyframes KITTAnimAfter {
+   0% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   10% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #300000;
+   }
+   20% {
+      background-color:#300000;
+      border-left:15px solid #600000;
+      border-right:15px solid #663a82;
+   }
+   30% {
+      background-color:#663a82;
+      border-left:15px solid #663a82;
+      border-right:15px solid #300000;
+   }
+   40% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   50% {
+      background-color:#c00000;
+      border-left:15px solid #f00000;
+      border-right:15px solid #663a82;
+   }
+   60% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   70% {
+      background-color:#663a82;
+      border-left:15px solid #a00000;
+      border-right:15px solid #663a82;
+   }
+   80% {
+      background-color:#a00000;
+      border-left:15px solid #600000;
+      border-right:15px solid #c00000;
+   }
+   90% {
+      background-color:#600000;
+      border-left:15px solid #300000;
+      border-right:15px solid #a00000;
+   }
+   100% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #a00000;
+   }
+}
+@keyframes KARRAnim {
+   0% {
+      background-color:#663a82;
+      border-left:15px solid #ffff00;
+      border-right:15px solid #663a82;
+   }
+   10% {
+      background-color:#333300;
+      border-left:15px solid #ffff00;
+      border-right:15px solid #333300;
+   }
+   20% {
+      background-color:#663a82;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #663a82;
+   }
+   30% {
+      background-color:#663a82;
+      border-left:15px solid #808000;
+      border-right:15px solid #663a82;
+   }
+   40% {
+      background-color:#333300;
+      border-left:15px solid #4c4c00;
+      border-right:15px solid #333300;
+   }
+   50% {
+      background-color:#4c4c00;
+      border-left:15px solid #333300;
+      border-right:15px solid #333300;
+   }
+   60% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #663a82;
+   }
+   70% {
+      background-color:#cccc00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #663a82;
+   }
+   80% {
+      background-color:#ffff00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #cccc00;
+   }
+   90% {
+      background-color:#cccc00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #ffff00;
+   }
+   100% {
+      background-color:#cccc00;
+      border-left:15px solid #333300;
+      border-right:15px solid #ffff00;
+   }
+}
+
+@keyframes KARRAnimBefore {
+   0% {
+      background-color:#808000;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #4c4c00;
+   }
+   10% {
+      background-color:#808000;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #4c4c00;
+   }
+   20% {
+      background-color:#cccc00;
+      border-left:15px solid #ffff00;
+      border-right:15px solid #808000;
+   }
+   30% {
+      background-color:#ffff00;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #cccc00;
+   }
+   40% {
+      background-color:#cccc00;
+      border-left:15px solid #808000;
+      border-right:15px solid #ffff00;
+   }
+   50% {
+      background-color:#808000;
+      border-left:15px solid #4c4c00;
+      border-right:15px solid #663a82;
+   }
+   60% {
+      background-color:#4c4c00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #808000;
+   }
+   70% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #4c4c00;
+   }
+   80% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #663a82;
+   }
+   90% {
+      background-color:#663a82;
+      border-left:15px solid #663a82;
+      border-right:15px solid #333300;
+   }
+   100% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #333300;
+   }
+}
+
+@keyframes KARRAnimAfter {
+   0% {
+      background-color:#663a82;
+      border-left:15px solid #663a82;
+      border-right:15px solid #000;
+   }
+   10% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #333300;
+   }
+   20% {
+      background-color:#663a82;
+      border-left:15px solid #4c4c00;
+      border-right:15px solid #333300;
+   }
+   30% {
+      background-color:#663a82;
+      border-left:15px solid #663a82;
+      border-right:15px solid #333300;
+   }
+   40% {
+      background-color:#808000;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #333300;
+   }
+   50% {
+      background-color:#663a82;
+      border-left:15px solid #ffff00;
+      border-right:15px solid #333300;
+   }
+   60% {
+      background-color:#663a82;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #333300;
+   }
+   70% {
+      background-color:#cccc00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #663a82;
+   }
+   80% {
+      background-color:#663a82;
+      border-left:15px solid #4c4c00;
+      border-right:15px solid #663a82;
+   }
+   90% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #808000;
+   }
+   100% {
+      background-color:#4c4c00;
+      border-left:15px solid #333300;
+      border-right:15px solid #663a82;
+   }
+}
+
+
+
+
+/*
+━━━╮""""''''''
+━━╮╰╮┊┊┊┊┊┊
+┊┊╰╮╰━▂▂▂▂┊┊┊┊┊┊
+┊▂╱▔╲▔╱┏┳╮╲┊┊ᶤ.╭╮
+▂╲▂▂╱╲╲╰┻┛╱▔▔▔▔┃
+╲▂▂╱╭╯╱▔▔╱▔▔▔▽▽╯ 
+┊╱╱╭╯╱▔▔▔╲▂▂△▂△╮  Thanks for visiting the 
+━━━╯╱╱╭━━━━━━━━╯   code🖐️
+
+*/
+
+
+        </style>
+</head>
+<body>
+<script>
+    
+
+//Thanks for vising my code😁
+//alert("💕SOLOpedia | Euler's number, e..!\n\nThe number e, known as Euler's number, is a mathematical constant approximately equal to 2.71828, and can be characterized in many ways.\n\n\nHope you enjoy the descriptions as well as my simple coding design. I try my best. Check the special section e-Nature and e-FACTOMANIA. Enjoy😊")
+
+
+window.addEventListener('load', checkJSLoaded)
+
+function checkJSLoaded() {   
+
+//sound function of howler.js
+var sound = new Howl({
+  src: ['http://dl.dropbox.com/s/z02ydub4mxugud4/Upbeat%20Background%20Music.mp3'],
+  autoplay: true,
+  loop: true,     //for sound looping 
+  volume: .3,
+});
+
+// Clear listener after first call.
+sound.once('load', function(){
+  sound.play();
+});
+
+var DEBUG = false;
+if(!DEBUG){
+    if(!window.console) window.console = {};
+    var methods = ["log", "debug", "warn", "info"];
+    for(var i=0;i<methods.length;i++){
+        console[methods[i]] = function(){};
+    }
+}
+   };
+
+/*
+┈┈┈╲┈┈┈┈╱
+ ┈┈╱    ▔╲
+┈┈┃┈▇┈┈▇┈┃
+╭╮┣━━━━━━┫╭╮
+┃┃┃┈┈┈┈┈┈┃┃┃
+╰╯┃┈┈┈┈┈┈┃╰╯
+┈┈╰┓┏━━┓┏╯
+┈┈┈╰╯┈┈╰╯      
+
+😊You r always welcome 😊
+
+The EnD
+
+*/
+
+</script>
+<h2 align="center">Euler's number, e</h2>
+<hr>
+<p>
+<img src="https://www.dropbox.com/s/8tr0qxump69f5fh/giphy%20%281%29.gif?dl=1" alt="Smiley fish" style="float:right;width:112px;height:92px;margin: 0 0 .5px .5px;">
+The number e, known as Euler's number, is a mathematical constant approximately equal to 2.71828, and can be characterized in many ways. It is the base of the natural logarithm. It is the limit of (1 + 1/n)ⁿ as n approaches infinity, an expression that arises in the study of compound interest. It can also be calculated as the sum of the infinite series. e is sometimes called Euler's number, after the Swiss mathematician Leonhard Euler (not to be confused with γ, the Euler–Mascheroni constant, sometimes called simply Euler's constant), or Napier's constant. However, Euler's choice of the symbol e is said to have been retained in his honor. The constant was discovered by the Swiss mathematician Jacob Bernoulli while studying compound interest. The number e has eminent importance in mathematics, alongside 0, 1, π, and i. All five of these numbers play important and recurring roles across mathematics, and these five constants appear in one formulation of Euler's identity. I describe it in e-FACTOMANIA section with a sweet solution of it. Like the constant π, e is irrational (that is, it cannot be represented as a ratio of integers) and transcendental (that is, it is not a root of any non-zero polynomial with rational coefficients). To 50 decimal places the value of e is:
+<br /><br />
+2.7182818284590452353602...
+</p>
+<br />
+<p><strong>History:</strong></p>
+<p>
+The first references to the constant were published in 1618 in the table of an appendix of a work on logarithms by John Napier. However, this did not contain the constant itself, but simply a list of logarithms calculated from the constant. It is assumed that the table was written by William Oughtred. The discovery of the constant itself is credited to Jacob Bernoulli in 1683, who attempted to find the value of the following expression (which is equal to e). Show in the figure.
+
+<p>
+<img src="https://www.dropbox.com/s/02nl9ubmtexugzd/IMG_20201124_181850.jpg?dl=1" alt="Smiley face" style="float:left;width:157px;height:85px; margin: 0 0 .5px .5px;">
+</p> 
+The first known use of the constant, represented by the letter b, was in correspondence from Gottfried Leibniz to Christiaan Huygens in 1690 and 1691. Leonhard Euler introduced the letter e as the base for natural logarithms, writing in a letter to Christian Goldbach on 25 November 1731. Euler started to use the letter e for the constant in 1727 or 1728, in an unpublished paper on explosive forces in cannons, while the first appearance of e in a publication was in Euler's Mechanica (1736). Although some researchers used the letter c in the subsequent years, the letter e was more common and eventually became standard.
+
+In mathematics, the standard is to typeset the constant as "e", in italics; the ISO 80000-2:2009 standard recommends typesetting constants in an upright style, but this has not been validated by the scientific community.
+</p>
+
+<p><strong>Number Theory:</strong></p>
+<p>
+<img src="https://www.dropbox.com/s/epqhxcgwhoefcas/IMG_20201124_175826.jpg?dl=1" alt="Smiley face" style="float:right;width:170px;height:120px; margin: 0 0 .5px .5px; padding:2px">
+The real number e is irrational. Euler proved this by showing that its simple continued fraction expansion is infinite. Furthermore, by the Lindemann–Weierstrass theorem, e is transcendental, meaning that it is not a solution of any non-constant polynomial equation with rational coefficients. It was the first number to be proved transcendental without having been specifically constructed for this purpose (compare with Liouville number); the proof was given by Charles Hermite in 1873.
+
+It is conjectured that e is normal, meaning that when e is expressed in any base the possible digits in that base are uniformly distributed (occur with equal probability in any sequence of given length).
+</p>
+
+<p><strong>Stochastic representations:</strong></p>
+<p>
+<img src="https://www.dropbox.com/s/kdmjm6f4r12hk7p/IMG_20201124_181208.jpg?dl=1" alt="Smiley face" style="float:right;width:147px;height:62px;margin: 0 0 .5px .5px;">
+In addition to exact analytical expressions for representation of e, there are stochastic techniques for estimating e. One such approach begins with an infinite sequence of independent random variables X1, X2..., drawn from the uniform distribution on [0, 1]. Let V be the least number n such that the sum of the first n observations exceeds 1. Then the expected value of V is e: E(V) = e.
+</p>
+
+<p><strong>Derangements:</strong></p>
+<p>
+<img src="https://www.dropbox.com/s/a95w0tio5apshvl/IMG_20201124_181016.jpg?dl=1" alt="Smiley face" style="float:right;width:155px;height:62px; margin: 0 0 .5px .5px;">
+Another application of e, also discovered in part by Jacob Bernoulli along with Pierre Raymond de Montmort, is in the problem of derangements, also known as the hat check problem: n guests are invited to a party, and at the door, the guests all check their hats with the butler, who in turn places the hats into n boxes, each labelled with the name of one guest. But the butler has not asked the identities of the guests, and so he puts the hats into boxes selected at random. The problem of de Montmort is to find the probability that none of the hats gets put into the right box. This probability, denoted by Pn.
+</p>
+
+<p>
+As the number n of guests tends to infinity, pn approaches 1/e. Furthermore, the number of ways the hats can be placed into the boxes so that none of the hats are in the right box is n!/e (rounded to the nearest integer for every positive n).
+</p>
+
+
+
+<p><strong>In computer culture:</strong></p>
+<p>
+<img src="https://www.dropbox.com/s/p95ekw25e9lhn5o/tumblr_ng2n1eROsR1s2lbywo1_r2_500%20%281%29.gif?dl=1" alt="Smiley face" style="float:left;width:147px;height:100px; margin:2px; padding:2px">
+During the emergence of internet culture, individuals and organizations sometimes paid homage to the number e. In an early example, the computer scientist Donald Knuth let the version numbers of his program Metafont approach e. The versions are 2, 2.7, 2.71, 2.718, and so forth. In another instance, the IPO filing for Google in 2004, rather than a typical round-number amount of money, the company announced its intention to raise 2,718,281,828 USD, which is e billion dollars rounded to the nearest dollar. Google was also responsible for a billboard that appeared in the heart of Silicon Valley, and later in Cambridge, Massachusetts; Seattle, Washington; and Austin, Texas. It read "{first 10-digit prime found in consecutive digits of e}.com". Solving this problem and visiting the advertised (now defunct) website led to an even more difficult problem to solve, which in turn led to Google Labs where the visitor was invited to submit a résumé. The first 10-digit prime in e is 7427466391, which starts at the 99th digit.
+
+</p>
+
+<p style="color: red"><strong>💕 e-Nature:</strong></p>
+        <p>Read the section deeply. It is a part of my reserch paper; a branch of Numerical Analysis. It shows you, even falling sand from sand-hill do follow the ratio. CRAZY!!? No friends, it is true. It is a constant. Mathematical constants are likely to be Nature. Our nature never break it's law as well. Euler realize this beautiful fact. Now come to the point. Suppose, a product cost raised 25%. We can find it by multiply with 1.25x. How!? Using Unitary mathematics.</p>
+        
+        <p align="left">
+Suppose, a products' previous cost = 100tk, now raised with 25% cost,<br />
+So,
+100tk product raise 25%, now= 125tk<br>
+1tk ___ ...                 = 125/100tk<br>
+xtk ___ ...                 = 1.25x tk<br>
+<br />
+This is the process. By this theory we can find, any % of cost, likewisely, <br />
+35% = 1.35x<br>
+75% = 1.75x<br>
+Now, for r% = (1 + r)x<br/><br />
+<img src="https://www.dropbox.com/s/qwx8lnh1y3x4uhx/images%20%285%29.png?dl=1" alt="Smiley face" style="float:right;width:155px;height:78px; margin: 0 0 .5px .5px;">
+If this is clear to you, now we can clear the concept of Simple interest and Compund interest. Let's think we have a bank. The bank gave rate of yearly interest, r = 25% or 0.25. Now, a man invest, P = 100tk in the bank for, n = 3 years. What will he get after three years? See on the table. According to simple interest, interest calculate on what a man invest on the first time. But in compound interest the ammount is calculated not like simple interest but, the next year interest is calculate on Interest-real. For clear explanation; see the table.    
+<table border="1" align="center">
+    <tr>
+        <td align="center">Simple Interest</td>
+        <td align="center">Compound Interest</td>
+    </tr>
+    <tr>
+        <td align="center">
+         <ol>
+             <li align="center" style="font-size: 5px;">1st year interest is: 25tk</li>
+             <li align="center" style="font-size: 5px;">2nd year interest is: 25tk</li>
+             <li align="center" style="font-size: 5px;">3rd year interest is: 25tk</li>
+             _______________<br>
+             <a align="center" style="font-size: 5px; font-weight: bold;">Total interest after three year is: 75tk</a><br />
+             <a align="center" style="font-size: 5px; font-weight: bold;">After three years total ammount is: 175tk</a>
+             
+         </ol>   
+        </td>
+        <td align="center">
+        <ol>
+          <li align="center" style="font-size: 5px;">1st year: 100x1.25=125</li>
+             <li align="center" style="font-size: 5px;">2nd year: (100x1.25)x1.25</li>
+             <li align="center" style="font-size: 5px;">3rd year: (100x1.25x1.25)x1.25 or <br />100 x 1.25³</li>
+             _______________<br>
+             <a align="center" style="font-size: 5px; font-weight: bold;">Here we can write: P (1+r)ⁿ</a><br />
+             </ol>
+        </td>
+    </tr>
+</table>
+<br />
+
+<p>
+<img src="https://www.dropbox.com/s/wex5p9l7bdav0h0/IMG-20201124-WA0000.jpg?dl=1" alt="Smiley face" style="float:left;width:155px;height:76px; margin: 0 0 .5px .5px; padding:2px">
+Now, we are close to e. The law of nature is working like that, as compound interest, how!? Suppose the sand is falling down from the peack of the sand hill, the ammount of sand fall down create pressure to next layer what is the total ammount of sand. See the figure. The difference between those claculation is we calculate the interest after one year. But the calculation for sand hill in every moments. Nature works like that. Set our calculation of interest to the moment and see what happens. The calculation of bank in mathematics we call it descrete. The law of nature works we call continous. 
+</p>
+<br />
+<img src="https://www.dropbox.com/s/sn2r2zi4x8gq4zn/IMG-20201124-WA0001.jpg?dl=1" alt="Smiley face" style="float:right;width:155px;height:78px; margin: 0 0 .5px .5px;">
+I opened a bank. One of my poor friend came to me and told that he invested P = 1tk, but he requested me to give r = 100% ( or = 100/100 = 1 ) interest. I think for a while, and told oky my friend. What is the total amount my friend will get after one year,  
+<pre ID="pre" style="font-weight: bold;">
+According to formula,<br />
+P (1+r)ⁿ<br/>
+= 1 (1+1)¹<br/>
+= 2
+</pre>
+</p>
+<p>
+My another cunning friend came next to me and told that he invested P = 1tk also r = 100% ( or = 100/100 = 1 ) interest but he told me to do the calculation after n = 6 months not n = 1 year. What is the problem, see r is changed for 6 months is r = 50% and also n is changed cause we divide the year 6 month + 6 month, so n = 2, 
+<pre ID="pre" style="font-weight: bold;">
+According to formula, now-<br />
+P (1+r)ⁿ<br/>
+= 1 (1+(1/2))²<br/>
+= 2.25, he is the gainer 😉
+</pre>
+</p>
+<p>
+Another mathematian friend caught the fact and come with same requirments but he told me to divide the year/3.   
+<pre ID="pre" style="font-weight: bold;">
+According to formula, now-<br />
+P (1+r)ⁿ<br/>
+= 1 (1+(1/3))³<br/>
+= 2.3704, is raised 👌
+</pre>
+</p>
+<p>
+Now, another come with year/4.
+<pre ID="pre" style="font-weight: bold;">
+According to formula, now-<br />
+P (1+r)ⁿ<br/>
+= 1 (1+(1/4))⁴<br/>
+= 2.4414, he is the also the gainer 😉
+</pre>    
+</p>
+<p>
+Now, another come with year/100. I know I faced lose, but I want to see the end-
+<pre ID="pre" style="font-weight: bold;">
+According to formula, now-<br />
+P (1+r)ⁿ<br/>
+= 1 (1+(1/100))¹⁰⁰<br/>
+= 2.7048
+</pre>    
+</p>
+<p>
+Now, another come with year/10000.
+<pre ID="pre" style="font-weight: bold;">
+According to formula, now-<br />
+P (1+r)ⁿ<br/>
+= 1 (1+(1/10000))¹⁰⁰⁰⁰<br/>
+= 2.7181
+</pre>
+Now, I feel something strange when 100 goes to 10000; the value change a little. See what will happen when 1000000-    
+</p>
+<p>
+Now, the year/1000000.
+<pre ID="pre" style="font-weight: bold;">
+According to formula, now-<br />
+P (1+r)ⁿ<br/>
+= 1 (1+(1/1000000))¹⁰⁰⁰⁰⁰⁰<br/>
+= 2.7183
+</pre>    
+</p>
+<p>
+Now, lastly the year/100000000.
+<pre ID="pre" style="font-weight: bold;">
+According to formula, now-<br />
+P (1+r)ⁿ<br/>
+= 1 (1+(1/100000000))¹⁰⁰⁰⁰⁰⁰⁰⁰<br/>
+= 2.7183
+</pre>
+Yes, the value is fixed. What we did actually, we divide the year with 100000000 means the calculation is now for moments like the sand hill means the nature works as like this. So, if P = 1 and r = 100%, we get highest interest is 2.7183. It is e.       
+</p>
+<p>
+<img src="https://www.dropbox.com/s/2i47w0y5bh833hk/images%20%284%29.png?dl=1" alt="Smiley face" style="float:right;width:155px;height:62px; margin: 0 0 .5px .5px;">
+Now, we can write the formula like that using calculus and put limits in it.<br/>
+
+</p>
+
+<p style="color: red"><strong>💕 e-FACTOMANIA:</strong></p>
+<p>
+<img src="https://www.dropbox.com/s/msiupj1q5d99mxr/euler_ex01.gif?dl=1" alt="Smiley face" style="float:right;width:158px;height:100px; margin: 0 0 .5px .5px; padding:2px">
+The number e has great importance in mathematics, as do 0, 1, π, and i. All five of these numbers are important and occur again and again in mathematics. The five constants appear in one formulation of Euler's identity. Like the constant π, e is also irrational (it cannot be represented as a ratio of integers) and transcendental (it is not a root of any non-zero polynomial with rational coefficients). Euler's identity is like that e^(iπ) + 1 = 0. All five set in one equation. The most beautiful equation called ever. Has a sweet solution, see-
+<pre>
+Suppose, e^(iπ) = 💕
+
+💕 + 1 =0
+
+Here is the Solution:
+💕 = cos(π) + i. sin(π)
+Sin(π) =0 and cos(π) = -1
+
+😁 Now, just substitute in equation
+
+-1 + 0 + 1 = 0
+    
+</pre>
+</p>
+
+<p>
+<a style="color: blue">Here are few fascinating facts about e:</a>
+<ul>
+    <li>Leonard Euler first used e in 1736 to mean "that number whose hyperbolic logarithm is equal to 1."</li>
+    <li>e is sometimes called "Euler's number."</li>
+    <li>In 1737, Euler first used the symbol for pi to be the ratio of the circumference to the diameter in a circle.</li>
+    <li>In 1777, Euler first used i to be equal to the square root of -1.</li>
+    <li>Euler was the first to write
+e^(pi * i) + 1 = 0, which contains the five most significant numbers in all of mathematics.</li>
+    <li>e is the base of the exponential function y=a^x such that the slope of the tangent to the curve at the point (0,1) is 1. -- Bill Turner</li>
+    
+</ul>
+</p>
+<hr>
+<br />
+<a href="https://www.sololearn.com/Profile/17782587/?ref=app"><section><sup>&copy Mǟɖ↻ôɖɆⱤ💉🖖 24/11/20</sup></section>
+     </a>
+     
+<style>
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #fff;
+}
+</style>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>     
+     
+     
+</body>
+
+</html>
