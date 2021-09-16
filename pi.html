@@ -1,0 +1,731 @@
+<!--
+
+╱╭━━┳━┳━┳╮               
+━┫╱┓┣┳━━━╯                       
+╱╱╱┃┃╯                              
+━┫╱╰┛╯
+╱╰━━━╯
+DISCLAIMER: The code is for educational purposes only. You can use it for educational purposes only not for commercial uses.
+
+░░╔══╗░░░░░░░░░░╔══╗░░ ░╚╣▐▐╠╝░░╔══╗░░╚╣▐▐╠╝░
+░░╚╦╦╝░░╚╣▌▌╠╝░░╚╦╦╝░░ ░░░╚╚░░░░╚╦╦╝░░░░╚╚░░░
+░░░░░░░░░░╝╝░░░░░░░░░░
+
+💕Detail abt the project:
+
+Series Name: SOLOpedia
+Project Name: Archimedes' constant, π
+Project No: #1
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Archimedes' constant, π
+    </title>
+    <meta charset="utf-8">
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js" integrity="sha512-ALoawPS0JxHQ+8dGL7htZIlVNRaE/SN9gHD4G8pJJTi9H4BQ/3PjdvhggSGR34g00mvTPFkxQuveQUsJA5664Q==" crossorigin="anonymous"></script>
+        
+        <style>
+            
+
+body {
+    background-color: #fff;
+    color: #000;
+}
+
+section{ 
+color:red;
+text-size:x-large; 
+text-align:center;
+}
+
+a:link {
+    
+    text-decoration: none;
+}
+
+hr{
+    
+    text-shadow:0 0 2px black;
+    
+}
+
+hr{
+  display:block;
+  margin:0 auto;
+  height:3px;
+  width:300px;
+  border:none;
+  border-radius: 1px;
+  border-left:10px solid #000;
+  border-right:10px solid #fff;
+  animation: KITTAnim 1s infinite ease-in-out alternate;
+}
+
+hr:before{
+  content:" ";
+  display:inline-block;
+  width:15px;
+  height:15px;
+  border-left:15px solid #000;
+  border-right:15px solid #fff;
+  animation: KITTAnimBefore 1s infinite ease-in-out alternate;
+}
+
+hr:after{
+  content:" ";
+  display:inline-block;
+  width:15px;
+  height:15px;
+  border-left:15px solid #300000;
+  background-color:#fff;
+  border-right:15px solid #300000;
+  animation: KITTAnimAfter 1s infinite ease-in-out alternate;
+}
+
+hr:nth-child(even)
+{
+  animation: KARRAnim 1s infinite ease-in-out alternate;
+}
+
+hr:nth-child(even):after
+{
+  animation: KARRAnimAfter 1s infinite ease-in-out alternate;
+}
+
+hr:nth-child(even):before
+{
+  animation: KARRAnimBefore 1s infinite ease-in-out alternate;
+}
+
+/**
+    Keyframes
+Do not try at home
+
+**/
+
+
+@keyframes KITTAnim {
+   0% {
+      background-color:#000;
+      border-left:15px solid #fff;
+      border-right:15px solid #000;
+   }
+   10% {
+      background-color:#663a82;
+      border-left:15px solid #f00000;
+      border-right:15px solid #663a82;
+   }
+   20% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   30% {
+      background-color:#663a82;
+      border-left:15px solid #a00000;
+      border-right:15px solid #663a82;
+   }
+   40% {
+      background-color:#663a82;
+      border-left:15px solid #600000;
+      border-right:15px solid #663a82;
+   }
+   50% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   60% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   70% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   80% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   90% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   100% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+}
+
+@keyframes KITTAnimBefore {
+   0% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   10% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   20% {
+      background-color:#663a82;
+      border-left:15px solid #f00000;
+      border-right:15px solid #663a82;
+   }
+   30% {
+      background-color:#f00000;
+      border-left:15px solid #c00000;
+      border-right:15px solid #c00000;
+   }
+   40% {
+      background-color:#c00000;
+      border-left:15px solid #a00000;
+      border-right:15px solid #f00000;
+   }
+   50% {
+      background-color:#a00000;
+      border-left:15px solid #600000;
+      border-right:15px solid #c00000;
+   }
+   60% {
+      background-color:#600000;
+      border-left:15px solid #300000;
+      border-right:15px solid #a00000;
+   }
+   70% {
+      background-color:#300000;
+      border-left:15px solid #300000;
+      border-right:15px solid #600000;
+   }
+   80% {
+      background-color:#300000;
+      border-left:15px solid #300000;
+      border-right:15px solid #300000;
+   }
+   90% {
+      background-color:#300000;
+      border-left:15px solid #300000;
+      border-right:15px solid #300000;
+   }
+   100% {
+      background-color:#300000;
+      border-left:15px solid #300000;
+      border-right:15px solid #300000;
+   }
+}
+
+@keyframes KITTAnimAfter {
+   0% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   10% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #300000;
+   }
+   20% {
+      background-color:#300000;
+      border-left:15px solid #600000;
+      border-right:15px solid #663a82;
+   }
+   30% {
+      background-color:#663a82;
+      border-left:15px solid #663a82;
+      border-right:15px solid #300000;
+   }
+   40% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   50% {
+      background-color:#c00000;
+      border-left:15px solid #f00000;
+      border-right:15px solid #663a82;
+   }
+   60% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   70% {
+      background-color:#663a82;
+      border-left:15px solid #a00000;
+      border-right:15px solid #663a82;
+   }
+   80% {
+      background-color:#a00000;
+      border-left:15px solid #600000;
+      border-right:15px solid #c00000;
+   }
+   90% {
+      background-color:#600000;
+      border-left:15px solid #300000;
+      border-right:15px solid #a00000;
+   }
+   100% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #a00000;
+   }
+}
+@keyframes KARRAnim {
+   0% {
+      background-color:#663a82;
+      border-left:15px solid #ffff00;
+      border-right:15px solid #663a82;
+   }
+   10% {
+      background-color:#333300;
+      border-left:15px solid #ffff00;
+      border-right:15px solid #333300;
+   }
+   20% {
+      background-color:#663a82;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #663a82;
+   }
+   30% {
+      background-color:#663a82;
+      border-left:15px solid #808000;
+      border-right:15px solid #663a82;
+   }
+   40% {
+      background-color:#333300;
+      border-left:15px solid #4c4c00;
+      border-right:15px solid #333300;
+   }
+   50% {
+      background-color:#4c4c00;
+      border-left:15px solid #333300;
+      border-right:15px solid #333300;
+   }
+   60% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #663a82;
+   }
+   70% {
+      background-color:#cccc00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #663a82;
+   }
+   80% {
+      background-color:#ffff00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #cccc00;
+   }
+   90% {
+      background-color:#cccc00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #ffff00;
+   }
+   100% {
+      background-color:#cccc00;
+      border-left:15px solid #333300;
+      border-right:15px solid #ffff00;
+   }
+}
+
+@keyframes KARRAnimBefore {
+   0% {
+      background-color:#808000;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #4c4c00;
+   }
+   10% {
+      background-color:#808000;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #4c4c00;
+   }
+   20% {
+      background-color:#cccc00;
+      border-left:15px solid #ffff00;
+      border-right:15px solid #808000;
+   }
+   30% {
+      background-color:#ffff00;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #cccc00;
+   }
+   40% {
+      background-color:#cccc00;
+      border-left:15px solid #808000;
+      border-right:15px solid #ffff00;
+   }
+   50% {
+      background-color:#808000;
+      border-left:15px solid #4c4c00;
+      border-right:15px solid #663a82;
+   }
+   60% {
+      background-color:#4c4c00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #808000;
+   }
+   70% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #4c4c00;
+   }
+   80% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #663a82;
+   }
+   90% {
+      background-color:#663a82;
+      border-left:15px solid #663a82;
+      border-right:15px solid #333300;
+   }
+   100% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #333300;
+   }
+}
+
+@keyframes KARRAnimAfter {
+   0% {
+      background-color:#663a82;
+      border-left:15px solid #663a82;
+      border-right:15px solid #000;
+   }
+   10% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #333300;
+   }
+   20% {
+      background-color:#663a82;
+      border-left:15px solid #4c4c00;
+      border-right:15px solid #333300;
+   }
+   30% {
+      background-color:#663a82;
+      border-left:15px solid #663a82;
+      border-right:15px solid #333300;
+   }
+   40% {
+      background-color:#808000;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #333300;
+   }
+   50% {
+      background-color:#663a82;
+      border-left:15px solid #ffff00;
+      border-right:15px solid #333300;
+   }
+   60% {
+      background-color:#663a82;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #333300;
+   }
+   70% {
+      background-color:#cccc00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #663a82;
+   }
+   80% {
+      background-color:#663a82;
+      border-left:15px solid #4c4c00;
+      border-right:15px solid #663a82;
+   }
+   90% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #808000;
+   }
+   100% {
+      background-color:#4c4c00;
+      border-left:15px solid #333300;
+      border-right:15px solid #663a82;
+   }
+}
+
+
+
+
+/*
+━━━╮""""''''''
+━━╮╰╮┊┊┊┊┊┊
+┊┊╰╮╰━▂▂▂▂┊┊┊┊┊┊
+┊▂╱▔╲▔╱┏┳╮╲┊┊ᶤ.╭╮
+▂╲▂▂╱╲╲╰┻┛╱▔▔▔▔┃
+╲▂▂╱╭╯╱▔▔╱▔▔▔▽▽╯ 
+┊╱╱╭╯╱▔▔▔╲▂▂△▂△╮  Thanks for visiting the 
+━━━╯╱╱╭━━━━━━━━╯   code🖐️
+
+*/
+
+
+            
+        </style>
+</head>
+<body>
+<script>
+  
+
+//Thanks for vising my code😁
+//alert("💕SOLOpedia | Archimedes' constant,π..!\n\nHere, I come up with a new series of codes. The target of the project is to share a topic in detail with infographics, equations, animation & so on; it is just the beginning. The name of the project define what is included in. Hope you get the point. The first #1 project on the related criteria is on Archimedes' constant, π.\n\n\nHope you enjoy the descriptions as well as my simple coding design. I try my best. Check the special section FACTOMANIA. Enjoy😊")
+
+
+window.addEventListener('load', checkJSLoaded)
+
+function checkJSLoaded() {   
+
+//sound function of howler.js
+var sound = new Howl({
+  src: ['http://dl.dropbox.com/s/o217b9sdlyj3k6l/Motivational%20Background%20Music%20%28%20256kbps%20cbr%20%29.mp3'],
+  autoplay: true,
+  loop: true,     //for sound looping 
+  volume: .3,
+});
+
+// Clear listener after first call.
+sound.once('load', function(){
+  sound.play();
+});
+
+var DEBUG = false;
+if(!DEBUG){
+    if(!window.console) window.console = {};
+    var methods = ["log", "debug", "warn", "info"];
+    for(var i=0;i<methods.length;i++){
+        console[methods[i]] = function(){};
+    }
+}
+   };
+
+/*
+┈┈┈╲┈┈┈┈╱
+ ┈┈╱    ▔╲
+┈┈┃┈▇┈┈▇┈┃
+╭╮┣━━━━━━┫╭╮
+┃┃┃┈┈┈┈┈┈┃┃┃
+╰╯┃┈┈┈┈┈┈┃╰╯
+┈┈╰┓┏━━┓┏╯
+┈┈┈╰╯┈┈╰╯      
+
+😊You r always welcome 😊
+
+The EnD
+
+*/
+  
+    
+</script>
+<h1 align="center">Archimedes' constant, π</h1>
+<hr>
+<p>
+<img src="https://www.dropbox.com/s/av2a15vu0ynxqq3/200.gif?dl=1" alt="Smiley fish" style="float:right;width:112px;height:92px;margin: 0 0 .5px .5px;">
+The number π (pi) is a mathematical constant. It is defined as the ratio of a circle's circumference to its diameter, and it also has various equivalent definitions. It appears in many formulas in all areas of mathematics and physics. It is approximately equal to 3.14159. It has been represented by the Greek letter "π" since the mid-18th century, and is spelled out as "pi". It is also referred to as Archimedes' constant.
+</p>
+<br />
+<p><strong>History:</strong></p>
+<p>
+Being an irrational number, π cannot be expressed as a common fraction, although fractions such as 22/7 are commonly used to approximate it. Equivalently, its decimal representation never ends and never settles into a permanently repeating pattern. Its decimal (or other base) digits appear to be randomly distributed, and are conjectured to satisfy a specific kind of statistical randomness.
+
+It is known that π is a transcendental number: it is not the root of any polynomial with rational coefficients. The transcendence of π implies that it is impossible to solve the ancient challenge of squaring the circle with a compass and straightedge.
+
+<p>
+<img src="https://www.dropbox.com/s/x33vy7p3cf1w7ro/31d55f55e057b1092666168ce4de9ea1.gif?dl=1" alt="Smiley face" style="float:left;width:157px;height:75px; margin: 0 0 .5px .5px;">
+</p> 
+Ancient civilizations, including the Egyptians and Babylonians, required fairly accurate approximations of π for practical computations. Around 250 BC, the Greek mathematician Archimedes created an algorithm to approximate π with arbitrary accuracy. In the 5th century AD, Chinese mathematics approximated π to seven digits, while Indian mathematics made a five-digit approximation, both using geometrical techniques. The first exact formula for π, based on infinite series, was discovered a millennium later, when in the 14th century the Madhava–Leibniz series was discovered in Indian mathematics. The invention of calculus soon led to the calculation of hundreds of digits of π, enough for all practical scientific computations. Nevertheless, in the 20th and 21st centuries, mathematicians and computer scientists have pursued new approaches that, when combined with increasing computational power, extended the decimal representation of π to many trillions of digits. The primary motivation for these computations is as a test case to develop efficient algorithms to calculate numeric series, as well as the quest to break records. The extensive calculations involved have also been used to test supercomputers and high-precision multiplication algorithms. The ubiquity of π makes it one of the most widely known mathematical constants—both inside and outside the scientific community. Several books devoted to π have been published, and record-setting calculations of the digits of π often result in news headlines. Adepts have succeeded in memorizing the value of π to over 70,000 digits.
+</p>
+
+<p><strong>Adoption of the symbol π:</strong></p>
+<p>
+<img src="https://www.dropbox.com/s/5we4fhyu3htmzap/2228px-Leonhard_Euler.jpg?dl=1" alt="Smiley face" style="float:right;width:150px;height:120px; margin: 0 0 .5px .5px; padding:2px">
+Leonhard Euler popularized the use of the Greek letter π in works he published in 1736 and 1748.
+</p>
+
+<p>
+In the earliest usages, the Greek letter π was an abbreviation of the Greek word for periphery, and was combined in ratios with δ (for diameter) or ρ (for radius) to form circle constants. (Before then, mathematicians sometimes used letters such as c or p instead.) The first recorded use is Oughtred's <img src="https://www.dropbox.com/s/p8f2js2r25yy4v7/IMG_20201122_194846.jpg?dl=1" alt="ball" style="float:none;width:54px;height:24px; margin: 0 0 .5px .5px;">, to express the ratio of periphery and diameter in the 1647 and later editions of Clavis Mathematicae. Barrow likewise used <img src="https://www.dropbox.com/s/qs4qmbidui6mixn/IMG_20201122_194923.jpg?dl=1" alt="ball" style="float:none;width:54px;height:27px; margin: 0 0 .5px .5px;"> to represent the constant 3.14..., while Gregory instead used <img src="https://www.dropbox.com/s/vx482y98h49v62k/IMG_20201122_195000.jpg?dl=1" alt="ball" style="float:none;width:54px;height:24px; margin: 0 0 .5px .5px;"> to represent 6.28... .
+
+The earliest known use of the Greek letter π alone to represent the ratio of a circle's circumference to its diameter was by Welsh mathematician William Jones in his 1706 work Synopsis Palmariorum Matheseos; or, a New Introduction to the Mathematics. The Greek letter first appears there in the phrase "1/2 Periphery (π)" in the discussion of a circle with radius one. However, he writes that his equations for π are from the "ready pen of the truly ingenious Mr. John Machin", leading to speculation that Machin may have employed the Greek letter before Jones. Jones' notation was not immediately adopted by other mathematicians, with the fraction notation still being used as late as 1767. Euler started using the single-letter form beginning with his 1727 Essay Explaining the Properties of Air, though he used π = 6.28..., the ratio of radius to periphery, in this and some later writing. Euler first used π = 3.14... in his 1736 work Mechanica, and continued in his widely-read 1748 work Introductio in analysin infinitorum (he wrote: "for the sake of brevity we will write this number as π; thus π is equal to half the circumference of a circle of radius 1"). Because Euler corresponded heavily with other mathematicians in Europe, the use of the Greek letter spread rapidly, and the practice was universally adopted thereafter in the Western world, though the definition still varied between 3.14... and 6.28...
+</p>
+
+<p><strong>Definition:</strong></p>
+<p>
+<img src="https://www.dropbox.com/s/00okes9x0spimmp/Screenshot_2020-11-22-19-39-24-35.jpg?dl=1" alt="Smiley face" style="float:right;width:147px;height:62px;margin: 0 0 .5px .5px;">
+π is commonly defined as the ratio of a circle's circumference C to its diameter d:
+</p>
+
+<p>
+The ratio C/d is constant, regardless of the circle's size. For example, if a circle has twice the diameter of another circle, it will also have twice the circumference, preserving the ratio C/d. This definition of π implicitly makes use of flat (Euclidean) geometry; although the notion of a circle can be extended to any curve (non-Euclidean) geometry, these new circles will no longer satisfy the formula π = C/d.
+<p>
+    <img src="https://www.dropbox.com/s/kgl2hsocqiylcq5/IMG_20201122_193955.jpg?dl=1" alt="Smiley face" style="float:left;width:147px;height:62px; margin: 0 0 .5px .5px;">
+
+Here, the circumference of a circle is the arc length around the perimeter of the circle, a quantity which can be formally defined independently of geometry using limits—a concept in calculus. For example, one may directly compute the arc length of the top half of the unit circle, given in Cartesian coordinates by the equation x2 + y2 = 1, as the integral.
+</p>
+<p>
+An integral such as this was adopted as the definition of π by Karl Weierstrass, who defined it directly as an integral in 1841. Definitions of π such as these that rely on concepts of the integral calculus are no longer common in the literature. Remmert 2012, Ch. 5 explains that this is because in many modern treatments of calculus, differential calculus typically precedes integral calculus in the university curriculum, so it is desirable to have a definition of π that does not rely on the latter. One such definition, due to Richard Baltzer and popularized by Edmund Landau, is the following: π is twice the smallest positive number at which the cosine function equals 0. The cosine can be defined independently of geometry as a power series, or as the solution of a differential equation. In a similar spirit, π can be defined using properties of the complex exponential, exp z, of a complex variable z. Like the cosine, the complex exponential can be defined in one of several ways. The set of complex numbers at which exp z is equal to one is then an (imaginary) arithmetic progression of the form.
+</p>
+<p><strong>Spigot algorithms:</strong></p>
+<p>
+<img src="https://www.dropbox.com/s/iwwr7wzo5ozjy5p/Screenshot_2020-11-22-19-34-50-65.jpg?dl=1" alt="Smiley face" style="float:right;width:155px;height:62px; margin: 0 0 .5px .5px;">
+Two algorithms were discovered in 1995 that opened up new avenues of research into π. They are called spigot algorithms because, like water dripping from a spigot, they produce single digits of π that are not reused after they are calculated. This is in contrast to infinite series or iterative algorithms, which retain and use all intermediate digits until the final result is produced. Mathematicians Stan Wagon and Stanley Rabinowitz produced a simple spigot algorithm in 1995. Its speed is comparable to arctan algorithms, but not as fast as iterative algorithms. Another spigot algorithm, the BBP digit extraction algorithm, was discovered in 1995 by Simon Plouffe.
+</p>
+
+<p>
+This formula, unlike others before it, can produce any individual hexadecimal digit of π without calculating all the preceding digits. Individual binary digits may be extracted from individual hexadecimal digits, and octal digits can be extracted from one or two hexadecimal digits. Variations of the algorithm have been discovered, but no digit extraction algorithm has yet been found that rapidly produces decimal digits. An important application of digit extraction algorithms is to validate new claims of record π computations: After a new record is claimed, the decimal result is converted to hexadecimal, and then a digit extraction algorithm is used to calculate several random hexadecimal digits near the end; if they match, this provides a measure of confidence that the entire computation is correct. Between 1998 and 2000, the distributed computing project PiHex used Bellard's formula (a modification of the BBP algorithm) to compute the quadrillionth (1015th) bit of π, which turned out to be 0. In September 2010, a Yahoo! employee used the company's Hadoop application on one thousand computers over a 23-day period to compute 256 bits of π at the two-quadrillionth (2×1015th) bit, which also happens to be zero.
+</p>
+
+
+
+<p><strong>In popular culture:</strong></p>
+<p>
+<img src="https://www.dropbox.com/s/h364mvxl9v4eake/Pi_pie2.jpg?dl=1" alt="Smiley face" style="float:left;width:147px;height:100px; margin:2px; padding:2px">
+Perhaps because of the simplicity of its definition and its ubiquitous presence in formulae, π has been represented in popular culture more than other mathematical constructs. In the 2008 Open University and BBC documentary co-production, The Story of Maths, aired in October 2008 on BBC Four, British mathematician Marcus du Sautoy shows a visualization of the – historically first exact – formula for calculating π when visiting India and exploring its contributions to trigonometry.
+
+</p>
+
+<p>
+
+In the Palais de la Découverte (a science museum in Paris) there is a circular room known as the pi room. On its wall are inscribed 707 digits of π. The digits are large wooden characters attached to the dome-like ceiling. The digits were based on an 1853 calculation by English mathematician William Shanks, which included an error beginning at the 528th digit. The error was detected in 1946 and corrected in 1949.
+
+In Carl Sagan's novel Contact it is suggested that the creator of the universe buried a message deep within the digits of π. The digits of π have also been incorporated into the lyrics of the song "Pi" from the album Aerial by Kate Bush.
+
+In the United States, Pi Day falls on 14 March (written 3/14 in the US style), and is popular among students. π and its digital representation are often used by self-described "math geeks" for inside jokes among mathematically and technologically minded groups. Several college cheers at the Massachusetts Institute of Technology include "3.14159". Pi Day in 2015 was particularly significant because the date and time 3/14/15 9:26:53 reflected many more digits of pi. In parts of the world where dates are commonly noted in day/month/year format, 22 July represents "Pi Approximation Day," as 22/7 = 3.142857.
+
+During the 2011 auction for Nortel's portfolio of valuable technology patents, Google made a series of unusually specific bids based on mathematical and scientific constants, including π.
+
+In 1958 Albert Eagle proposed replacing π by τ (tau), where τ = π/2, to simplify formulas. However, no other authors are known to use τ in this way. Some people use a different value, τ = 2π = 6.28318..., arguing that τ, as the number of radians in one turn, or as the ratio of a circle's circumference to its radius rather than its diameter, is more natural than π and simplifies many formulas. Celebrations of this number, because it approximately equals 6.28, by making 28 June "Tau Day" and eating "twice the pie", have been reported in the media. However, this use of τ has not made its way into mainstream mathematics. In 1897, an amateur mathematician attempted to persuade the Indiana legislature to pass the Indiana Pi Bill, which described a method to square the circle and contained text that implied various incorrect values for π, including 3.2. The bill is notorious as an attempt to establish a value of scientific constant by legislative fiat. The bill was passed by the Indiana House of Representatives, but rejected by the Senate, meaning it did not become a law.
+</p>
+
+<p><strong>Complex dynamics:</strong></p>
+<p>
+<img src="https://www.dropbox.com/s/g04n0gwordj0268/Mandel_zoom_00_mandelbrot_set.jpg?dl=1" alt="Smiley face" style="float:right;width:150px;height:100px; margin: 0 0 .5px .5px; padding:2px">
+π can be computed from the Mandelbrot set, by counting the number of iterations required before point (−0.75, ε) diverges.
+</p>
+
+<p>
+An occurrence of π in the Mandelbrot set fractal was discovered by David Boll in 1991. He examined the behaviour of the Mandelbrot set near the "neck" at (−0.75, 0). If points with coordinates (−0.75, ε) are considered, as ε tends to zero, the number of iterations until divergence for the point multiplied by ε converges to π. The point (0.25 + ε, 0) at the cusp of the large "valley" on the right side of the Mandelbrot set behaves similarly: the number of iterations until divergence multiplied by the square root of ε tends to π.
+</p>
+
+
+<p><strong>Archimedes Method:</strong></p>
+<p>
+<img src="https://www.dropbox.com/s/ixv54bmyut3ojvk/Gif_2.gif?dl=1" alt="Smiley face" style="float:left;width:147px;height:80px; margin: 2px; padding:2px">
+Archimedes, a Greek mathematician, was the first to use an algorithmic approach to calculate pi.  He drew a polygon inside a circle and drew a second polygon outside of the circle. Then he continuously added more and more sides of both polygons, getting closer and closer to the shape of the circle.  Having reached 96-sided polygons, he proved that 22371 < pi < 227.
+</p>
+
+<p>
+From Archimedes’ time (about 250 B.C.E.) to the early 1600s mathematicians in countries around the world used methods similar to Archimedes’ to estimate pi, with increasingly efficient and accurate results.  In 1630, Austrian astronomer Christoph Grienberger calculated 38 digits of pi using polygons with 1040 sides, which remains the best calculation of pi using this polygonal method. The Renaissance saw many developments and work on pi, including the creation of the name pi.  Until 1647, it didn’t have a universal name or symbol. English mathematician William Oughtred began calling it pi in his publication Clavis Mathematicae, but it wasn’t until Leonhard Euler used the symbol in 1737 that it became widely embraced.  The reason for adopting this particular Greek letter is because it is the first letter of the Greek word, perimetros, which loosely translates to “circumference.”
+
+In 1767, Swiss mathematician Johann Heinrich Lambert proved pi is irrational and in 1882 Ferdinand von Lindemann proved pi is transcendental, which means π cannot be a solution to a polynomial equation with rational coefficients.  This finding is significant because, until this point, it was believed that one could construct a square and a circle with equal area, known as “squaring the circle”. Proving the transcendence of pi showed this is not possible and the phrase “squaring the circle” is now used as a metaphor for trying to do something that is impossible. With modern technological advances, pi has now been calculated to 31 trillion digits.  However, only the first 39 or so are needed to be able to perform all calculations in our observable universe with virtually no error.  Though it is news every time the digit record is broken, we can now use technology to explore other aspects of pi. One example from the Chudnovsky brothers, a pair of American mathematicians:
+
+<br />
+<blockquote>
+“We are looking for the appearance of some rules that will distinguish the digits of pi from other numbers. If you see a Russian sentence that extends for a whole page, with hardly a comma, it is definitely Tolstoy. If someone gave you a million digits from somewhere in pi, could you tell it was from pi? We don’t really look for patterns; we look for rules” 
+</blockquote>
+<br />
+Take some time to research and explore this unique number.  It has a long and very detailed history that shows the field of mathematics as a living, breathing subject, not as a collection of rules and formulas. 
+</p>
+
+
+<p style="color: red"><strong>💕 pi-FACTOMANIA:</strong></p>
+<p>
+<img src="https://www.dropbox.com/s/gymq9y4rxxstsob/Gif_1.gif?dl=1" alt="Smiley face" style="float:right;width:158px;height:100px; margin: 0 0 .5px .5px; padding:2px">
+Pi is the most studied number in mathematics, and for good reason. The number pi is integral to our understanding of geometry. Pi has uses in physics, astronomy, and mathematics. Pi is used in architecture and construction as well, and has been a vital part of everything from arches and bridges to the Pyramids of Giza.  
+</p>
+
+<p>
+<a style="color: blue">Here are 15 fascinating facts about pi:</a>
+<ul>
+    <li>The symbol for Pi has been in use for over 250 years. The symbol was introduced by William Jones, a Welsh mathematician, in 1706. The symbol was made popular by the mathematician Leonhard Euler.</li>
+    <li>Since the exact value of pi can never be calculated, we can never find the accurate area or circumference of a circle.</li>
+    <li>March 14 or 3/14 is celebrated as pi day because 3.14 are the first digits of pi. Math nerds around the world love celebrating this infinitely long, never-ending number.</li>
+    <li>The record for reciting the most number of decimal places of Pi was achieved by Rajveer Meena at VIT University, Vellore, India on 21 March 2015. He was able to recite 70,000 decimal places. To maintain the sanctity of the record, Rajveer wore a blindfold throughout the duration of his recall, which took an astonishing 10 hours! Can’t believe it? Well, here is <a href="https://mobile.twitter.com/GWR/status/973859428880535552">the evidence.</a></li>
+    <li>Pi is actually a part of Egyptian mythology. People in Egypt believed that the pyramids of Giza were built on the principles of pi. The vertical height of the pyramids have the same relationship with the perimeter of their base as the relationship between a circle’s radius and its circumference. The pyramids are phenomenal structures and are one of the seven wonders of the world.</li>
+    <li>Physicist Larry Shaw started celebrating 14 March as Pi day at San Francisco’s Exploratorium science museum. There he is known as the Prince of Pi.</li>
+    <li>There is an entire language made from the number Pi. But how is that possible? Well, some people loved pi enough to invent a dialect based on it. In “Pi-lish” the number of letters in each word match the corresponding digit of pi. This first word has three letters, the second has one letter, the third has four letters, and so on. This language is more popular than you might think. Software engineer Michael Keith wrote an entire book, called Not a Wake in this language.</li>
+    <li>Pi wasn’t always known as pi. Before the 1700s, people referred to the number we know as pi as “the quantity which when the diameter is multiplied by it, yields the circumference”. Not surprisingly, people got tired of saying so much whenever they wanted to talk about Pi. The Welsh mathematician William Jones, a friend of Sir Isaac Newton, began using the symbol for pi in 1706.</li>
+    <li>We will never be able to find all the digits of pi because of its very definition as an irrational number. Babylonian civilization used the fraction 3 ⅛, the Chinese used the integer 3. By 1665, Isaac Newton calculated pi to 16 decimal places. Computers hadn’t been invented yet, so this was a pretty big deal. In the early 1700s Thomas Lagney calculated 127 decimal places of pi, reaching a new record. In the second half of the twentieth century, the number of digits of pi increased from about 2000 to 500,000 on the CDC 6600, one of the first computers ever made. This record was broken again in 2017 when a Swiss scientist computed more than 22 trillion digits of pi. The calculation took over a hundred days.</li>
+    <li>The usefulness of pi has been a matter of debate, although it is loved by a lot of math enthusiasts. Some believe that tau (which amounts to 2π) is a better suited to circle calculations. For instance, you can multiply tau with the radius of a to calculate its circumference more intuitively. Tau/4 also represents the angle of a quarter of a circle.</li>
+    <li>In the Exploratorium science museum, a circular parade happens every year on pi day. Each person participating holds one digit in the number pi. It wasn’t celebrated around the United States like it is now until Congress passed Resolution 224, which designated March 14th as pi day. Congress hoped that celebrating pi day would cultivate a higher level of enthusiasm for math and science among American students.</li>
+    <li>The calculation of pi is a stress test for a computer. It works just like a digital cardiogram since it indicates the level of activity within the computer’s processor.</li>
+    <li>The number pi was so alluring, even in the 16th century, that Dutch-German mathematician Ludolph van Ceulen spent most of his life calculating the first 36 digits of pi. It is said that the first 36 numbers were engraved on his tombstone, which is now lost.</li>
+    <li>William Shanks, a British mathematician, worked manually to find the digits of pi in 1873. He spent many years trying to calculate the pi digits by hand and found the first 707 digits. Unfortunately, the 527th digit he found was wrong, which made all the following digits wrong as well.</li>
+    <li>The number pi is literally infinitely long. But the number 123456 doesn’t appear anywhere in the first million digits of pi. It is a bit shocking because if a million digits of pi don’t have the sequence 124356, it definitely is the most unique number.</li>
+    
+</ul>
+</p>
+<hr>
+<br />
+<a href="https://www.sololearn.com/Profile/17782587/?ref=app"><section><sup>&copy Mǟɖ↻ôɖɆⱤ💉🖖 22/11/20</sup></section>
+     </a>
+     
+<style>
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #fff;
+}
+</style>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>     
+     
+     
+</body>
+
+</html>
