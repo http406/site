@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+        <title>Vigenère cipher</title>
+        <style>
+            body {
+    font-family: arial;
+    background: #000;
+    color:yellow;
+  }
+  
+  #finalize {
+    width: 320px;
+    height: 95px;
+    display: block;
+    background-color: white;
+    border: solid thin blue;
+    padding: 1px;
+    margin-top: 0px;
+    overflow: hidden;
+    color:blue;
+    font-size:13px;
+  }
+
+.head{
+    color:red;
+    font-size:1.8rem;
+}
+
+
+section{ 
+color:red;
+text-size:smaller; 
+text-align:center;
+}
+
+a:link {
+    
+    text-decoration: none;
+}
+        </style>
+    </head>
+    <body> 
+<script>
+    
+function myVigenereCipher() {
+    var t = document.getElementById("cipherText");
+    var tString = t.value;
+
+    var k = document.getElementById("cipherKey");
+    var kString = k.value;
+
+    var operationInputs = document.getElementsByName("cipherOperation");
+    var text = "";
+    var temp;
+    var cipherOperation = "0";
+
+    for(i = 0; i<operationInputs.length; i++) {
+        temp = operationInputs[i];
+        if(temp.type == "radio" && temp.checked) {
+            cipherOperation = temp.value;
+        };
+    };
+
+    if(cipherOperation == "1") {
+        text += "Decrypt ciphertext: ";
+    } else {
+        text += "Encrypt plaintext: ";
+    };
+
+    text += tString + "<br><br>";
+    text += "Key = " + kString + "<br><br>";
+
+    if(cipherOperation == "1") {
+        text += "Corresponding plaintext: ";
+        text += decryptVigenere(tString, kString);
+    } else {
+        text += "Corresponding ciphertext: ";
+        text += decryptVigenere(tString, invertString(kString));
+    }
+
+    document.getElementById("demo").innerHTML = text;
+};
+
+function decryptVigenere(cipherText, key) {
+    var text = "";
+    var j = 0;
+    var shift, trueShift, total, final;
+    for(var i = 0; i<cipherText.length; i++) {
+        shift = key.charCodeAt(j);
+        if(65<=shift && shift<=90) {
+            trueShift = modGreater(shift, 65, 26);
+        } else if(97<=shift && shift<=122) {
+            trueShift = modGreater(shift, 97, 26);
+        }
+        total = cipherText.charCodeAt(i);
+        if(65<=total && total<=90) {
+            final = modGreater(total, 65+trueShift, 26) + 65;
+        } else if(97<=total && total<=122) {
+            final = modGreater(total, 97+trueShift, 26) + 97;
+        } else {
+            return -1;
+        }
+        text += String.fromCharCode(final);
+        j+=1;
+        j%=key.length;
+    }
+    return text;
+}
+// modGreater finds the positive modulus v = (value-lowerBound)%mod
+// The return value v satisfies 0<=v<mod
+function modGreater(value, lowerBound, mod) {
+    var v = (value-lowerBound)%mod;
+    while(v<0) {
+        v+=mod;
+    }
+    while(v>=mod) {
+        v-=mod;
+    }
+    return v;
+}
+
+// myGCD(a,b) returns the positive greatest common divisor of two integers a and b
+function myGCD(a,b) {
+    a = Math.abs(a);
+    b = Math.abs(b);
+    if(Math.min(a,b) == 0){
+        return Math.max(a,b);
+    }
+    if(a>b) {
+        return myGCD(b,a%b);
+    }
+    return myGCD(a,b%a);
+}
+
+// modPower finds the remainder when base^expo is divided by mod
+// The return value v satisfies 0<=v<mod
+function modPower(base, expo, mod) {
+    var e = 1;
+    var p = base;
+    var powers = [];
+    while(e<=expo) {
+        p%=mod;
+        powers.push(p);
+        e*=2;
+        p*=p;
+    }
+    var bin = expo.toString(2);
+    var t = 1;
+    for(i = 0; i<bin.length; i++) {
+        if(bin[bin.length-i-1] == "1") {
+            t*=powers[i];
+            t%=mod;
+        };
+    };
+    return t;
+}
+
+// factorize finds the prime factorization of an integer
+// The return value [p,e] is a 2D arrayy
+// The first element is the prime factors
+// The second element is the corresponding exponents.
+function factorize(n) {
+    var i = 2;
+    primes = [];
+    expos = [];
+    var e;
+    while(i<=Math.sqrt(n)) {
+        if(n%i==0) {
+            primes.push(i);
+            e = 0;
+            while(n%i==0) {
+                n/=i;
+                e+=1;
+            }
+            expos.push(e);
+        }
+        i+=1;
+    }
+    if(n>1) {
+        primes.push(n);
+        expos.push(1);
+    }
+    return [primes,expos];
+}
+
+// totient computes Euler's Totient Function for an integer
+function totient(n) {
+    p = factorize(n)[0];
+    p.forEach((x) => {
+        n*=(x-1);
+        n/=x;
+    });
+    return n;
+}
+
+// modInv computes the modular inverse of a residue a with respect to a modulus mod.
+function modInv(a, mod) {
+    if(myGCD(a,mod)!= 1) {
+        return -1;
+    }
+    t = totient(mod);
+    return modPower(a, t-1, mod);
+}
+
+// invertString returns the inverse of the English text in a string (maintaining case sensitivity)
+// This is made specifically for the vigenere cipher where a = 0, b = 1, c = 2, ... z = -1, y = -2, etc.
+// For example, invertString("kEz") = "qWb"
+function invertString(myString) {
+    var text = "";
+    for(var i = 0; i<myString.length; i++) {
+        character = myString.charCodeAt(i);
+        if(65<=character && character<=90) {
+            if(character!=65) {
+                text += String.fromCharCode(156-character);
+            } else {
+                text+= String.fromCharCode(65);
+            }
+        } else if(97<=character && character<=122) {
+            if(character!=97) {
+                text += String.fromCharCode(220-character);
+            } else {
+                text+= String.fromCharCode(97);
+            }
+        } else {
+            return -1;
+        }
+    }
+    return text;
+}
+</script>        
+   <center class="head">Vigenère Cipher <br></center><hr> <p align="center" style="color: Aqua; font-size:5px;">        
+            The Vigenère cipher is a method to encrypt alphabetic text by using the position of the letter of the input on the key.
+The key is a word decided by the user and is kept secret.
+The message cannot be decrypted without the key. 
+<pre style="font-size:7px;">
+Let's encrypt the word "sololearn" with the key "web".
+
+Word: sololearn
+Key: web
+Encrypted message: osmkpfwvo</pre>
+        </p>
+        <p align="center" style="color: #fff;">
+            Enter the text to perform the Vigenère cipher Encrypt/Decrypt...
+        </p>
+        <div align="center" style="color:blue;">
+        <form id="frm1" action="/action_page.php">
+            Ciphertext / Plaintext: <input id = "cipherText" type = "text" name = "total" value = "sololearn"><br><br>
+            Encryption Key: <input id = "cipherKey" type = "text" name = "key" value = "web"><br><br>
+            Decrypt or Encrypt:<br>
+            <input type = "radio" id = "decryptRadio" name = "cipherOperation" value = "1" checked>
+            <label for = "decryptRadio">Decrypt</label><br>
+            <input type = "radio" id = "encryptRadio" name = "cipherOperation" value = "2">
+            <label for = "encryptRadio">Encrypt</label><br>
+        </form></div>
+        <p align="center" style="color: Aqua;">
+            Click "Run Cipher" to display the corresponding plaintext / ciphertext for your input.
+        </p>
+        <div align="center">
+        <button onclick="myVigenereCipher()">Run Cipher</button>
+        <br />
+        <div id = "finalize"><p id = "demo">Plaintext / Ciphertext</p></div></div><br />
+       <hr> 
+            
+    <a href="https://www.sololearn.com/Profile/17782587/?ref=app"><section><sup>&copy Mǟɖ↻ôɖɆⱤ💉🖖 16/11/20</sup></section></a>
+    </body>
+</html>
+
+
+
+<!--
+//from wikipedia
+In a Caesar cipher, each letter of the alphabet is shifted along some number of places. For example, in a Caesar cipher of shift 3, A would become D, B would become E, Y would become B and so on. The Vigenère cipher has several Caesar ciphers in sequence with different shift values.
+
+To encrypt, a table of alphabets can be used, termed a tabula recta, Vigenère square or Vigenère table. It has the alphabet written out 26 times in different rows, each alphabet shifted cyclically to the left compared to the previous alphabet, corresponding to the 26 possible Caesar ciphers. At different points in the encryption process, the cipher uses a different alphabet from one of the rows. The alphabet used at each point depends on a repeating keyword.
+
+For example, suppose that the plaintext to be encrypted is
+
+ATTACKATDAWN
+
+The person sending the message chooses a keyword and repeats it until it matches the length of the plaintext, for example, the keyword "LEMON":
+
+LEMONLEMONLE
+
+Each row starts with a key letter. The rest of the row holds the letters A to Z (in shifted order). Although there are 26 key rows shown, a code will use only as many keys (different alphabets) as there are unique letters in the key string, here just 5 keys: {L, E, M, O, N}. For successive letters of the message, successive letters of the key string will be taken and each message letter enciphered by using its corresponding key row. The next letter of the key is chosen, and that row is gone along to find the column heading that matches the message character. The letter at the intersection of [key-row, msg-col] is the enciphered letter.
+
+For example, the first letter of the plaintext, A, is paired with L, the first letter of the key. Therefore, row L and column A of the Vigenère square are used, namely L. Similarly, for the second letter of the plaintext, the second letter of the key is used. The letter at row E and column T is X. The rest of the plaintext is enciphered in a similar fashion:
+
+Plaintext:    ATTACKATDAWN
+Key:          LEMONLEMONLE
+Ciphertext:   LXFOPVEFRNHR
+
+Decryption is performed by going to the row in the table corresponding to the key, finding the position of the ciphertext letter in that row and then using the column's label as the plaintext. For example, in row L (from LEMON), the ciphertext L appears in column A, which is the first plaintext letter. Next, in row E (from LEMON), the ciphertext X is located in column T. Thus T is the second plaintext letter.
+-->
