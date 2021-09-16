@@ -1,0 +1,639 @@
+<!--
+DISCLAIMER⏩
+
+This is a tribute page for Prophet Muhammed ﷺ. The aim of the project is for educational purposes only nothing else. The major part of Islam is cover by the greatest prophet of all named Prophet Muhammed ﷺ and his way of living with his feelings of equality and fraternity. 
+
+Enjoy😊
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     <meta charset="utf-8">
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Tribute page </title>
+         <p align="center" id="wordscroller" style="color: #663a82; font-weight: bold; font-size: x-large"></p>  
+<script type="text/javascript">  
+    
+    function scroll(pos)  
+    {  
+        var txt = "لآ اِلَهَ اِلّا اللّهُ مُحَمَّدٌ رَسُوُل اللّهِ";  
+        var output = "";  
+        var screen = document.getElementById("wordscroller");  
+        for (var i = 0; i < pos; i++)  
+        {  
+            output += txt.charAt(i);  
+        }  
+        output += txt.charAt(pos);  
+        screen.innerHTML = output;  
+        pos++;  
+        if (pos != txt.length)  
+        {  
+            window.setTimeout(function () { scroll(pos); }, 200);  
+        }  
+        else  
+        {  
+            window.setTimeout(function () { scroll(0); }, 5000);  
+        }  
+    }  
+    scroll(0);  
+</script>  
+<style>
+    table { 
+    width: 100%;
+    font-size: 11pt;
+  }
+    table, th, td { 
+    border: 2px solid #cecece; 
+    border-collapse: collapse; 
+    text-align: center;
+    table-layout: fixed;
+ }
+    
+    li {
+    margin-bottom: 15px;
+ }
+    .section {
+    background-color: #ffffff ;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+ }
+   body {
+    font-family: Arial;
+    font-size: 12pt;
+    background-color: #efefef;
+    padding: 10px;
+    margin: 0;
+}
+
+
+hr{
+    
+    text-shadow:0 0 2px black;
+    
+}
+
+hr{
+  display:block;
+  margin:0 auto;
+  height:3px;
+  width:300px;
+  border:none;
+  border-radius: 1px;
+  border-left:10px solid #000;
+  border-right:10px solid #fff;
+  animation: KITTAnim 1s infinite ease-in-out alternate;
+}
+
+hr:before{
+  content:" ";
+  display:inline-block;
+  width:15px;
+  height:15px;
+  border-left:15px solid #000;
+  border-right:15px solid #fff;
+  animation: KITTAnimBefore 1s infinite ease-in-out alternate;
+}
+
+hr:after{
+  content:" ";
+  display:inline-block;
+  width:15px;
+  height:15px;
+  border-left:15px solid #300000;
+  background-color:#fff;
+  border-right:15px solid #300000;
+  animation: KITTAnimAfter 1s infinite ease-in-out alternate;
+}
+
+hr:nth-child(even)
+{
+  animation: KARRAnim 1s infinite ease-in-out alternate;
+}
+
+hr:nth-child(even):after
+{
+  animation: KARRAnimAfter 1s infinite ease-in-out alternate;
+}
+
+hr:nth-child(even):before
+{
+  animation: KARRAnimBefore 1s infinite ease-in-out alternate;
+}
+
+/**
+    Keyframes
+Do not try at home
+
+**/
+
+
+@keyframes KITTAnim {
+   0% {
+      background-color:#000;
+      border-left:15px solid #fff;
+      border-right:15px solid #000;
+   }
+   10% {
+      background-color:#663a82;
+      border-left:15px solid #f00000;
+      border-right:15px solid #663a82;
+   }
+   20% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   30% {
+      background-color:#663a82;
+      border-left:15px solid #a00000;
+      border-right:15px solid #663a82;
+   }
+   40% {
+      background-color:#663a82;
+      border-left:15px solid #600000;
+      border-right:15px solid #663a82;
+   }
+   50% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   60% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   70% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   80% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   90% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   100% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+}
+
+@keyframes KITTAnimBefore {
+   0% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   10% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   20% {
+      background-color:#663a82;
+      border-left:15px solid #f00000;
+      border-right:15px solid #663a82;
+   }
+   30% {
+      background-color:#f00000;
+      border-left:15px solid #c00000;
+      border-right:15px solid #c00000;
+   }
+   40% {
+      background-color:#c00000;
+      border-left:15px solid #a00000;
+      border-right:15px solid #f00000;
+   }
+   50% {
+      background-color:#a00000;
+      border-left:15px solid #600000;
+      border-right:15px solid #c00000;
+   }
+   60% {
+      background-color:#600000;
+      border-left:15px solid #300000;
+      border-right:15px solid #a00000;
+   }
+   70% {
+      background-color:#300000;
+      border-left:15px solid #300000;
+      border-right:15px solid #600000;
+   }
+   80% {
+      background-color:#300000;
+      border-left:15px solid #300000;
+      border-right:15px solid #300000;
+   }
+   90% {
+      background-color:#300000;
+      border-left:15px solid #300000;
+      border-right:15px solid #300000;
+   }
+   100% {
+      background-color:#300000;
+      border-left:15px solid #300000;
+      border-right:15px solid #300000;
+   }
+}
+
+@keyframes KITTAnimAfter {
+   0% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #663a82;
+   }
+   10% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #300000;
+   }
+   20% {
+      background-color:#300000;
+      border-left:15px solid #600000;
+      border-right:15px solid #663a82;
+   }
+   30% {
+      background-color:#663a82;
+      border-left:15px solid #663a82;
+      border-right:15px solid #300000;
+   }
+   40% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   50% {
+      background-color:#c00000;
+      border-left:15px solid #f00000;
+      border-right:15px solid #663a82;
+   }
+   60% {
+      background-color:#663a82;
+      border-left:15px solid #c00000;
+      border-right:15px solid #663a82;
+   }
+   70% {
+      background-color:#663a82;
+      border-left:15px solid #a00000;
+      border-right:15px solid #663a82;
+   }
+   80% {
+      background-color:#a00000;
+      border-left:15px solid #600000;
+      border-right:15px solid #c00000;
+   }
+   90% {
+      background-color:#600000;
+      border-left:15px solid #300000;
+      border-right:15px solid #a00000;
+   }
+   100% {
+      background-color:#663a82;
+      border-left:15px solid #300000;
+      border-right:15px solid #a00000;
+   }
+}
+@keyframes KARRAnim {
+   0% {
+      background-color:#663a82;
+      border-left:15px solid #ffff00;
+      border-right:15px solid #663a82;
+   }
+   10% {
+      background-color:#333300;
+      border-left:15px solid #ffff00;
+      border-right:15px solid #333300;
+   }
+   20% {
+      background-color:#663a82;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #663a82;
+   }
+   30% {
+      background-color:#663a82;
+      border-left:15px solid #808000;
+      border-right:15px solid #663a82;
+   }
+   40% {
+      background-color:#333300;
+      border-left:15px solid #4c4c00;
+      border-right:15px solid #333300;
+   }
+   50% {
+      background-color:#4c4c00;
+      border-left:15px solid #333300;
+      border-right:15px solid #333300;
+   }
+   60% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #663a82;
+   }
+   70% {
+      background-color:#cccc00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #663a82;
+   }
+   80% {
+      background-color:#ffff00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #cccc00;
+   }
+   90% {
+      background-color:#cccc00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #ffff00;
+   }
+   100% {
+      background-color:#cccc00;
+      border-left:15px solid #333300;
+      border-right:15px solid #ffff00;
+   }
+}
+
+@keyframes KARRAnimBefore {
+   0% {
+      background-color:#808000;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #4c4c00;
+   }
+   10% {
+      background-color:#808000;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #4c4c00;
+   }
+   20% {
+      background-color:#cccc00;
+      border-left:15px solid #ffff00;
+      border-right:15px solid #808000;
+   }
+   30% {
+      background-color:#ffff00;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #cccc00;
+   }
+   40% {
+      background-color:#cccc00;
+      border-left:15px solid #808000;
+      border-right:15px solid #ffff00;
+   }
+   50% {
+      background-color:#808000;
+      border-left:15px solid #4c4c00;
+      border-right:15px solid #663a82;
+   }
+   60% {
+      background-color:#4c4c00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #808000;
+   }
+   70% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #4c4c00;
+   }
+   80% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #663a82;
+   }
+   90% {
+      background-color:#663a82;
+      border-left:15px solid #663a82;
+      border-right:15px solid #333300;
+   }
+   100% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #333300;
+   }
+}
+
+@keyframes KARRAnimAfter {
+   0% {
+      background-color:#663a82;
+      border-left:15px solid #663a82;
+      border-right:15px solid #000;
+   }
+   10% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #333300;
+   }
+   20% {
+      background-color:#663a82;
+      border-left:15px solid #4c4c00;
+      border-right:15px solid #333300;
+   }
+   30% {
+      background-color:#663a82;
+      border-left:15px solid #663a82;
+      border-right:15px solid #333300;
+   }
+   40% {
+      background-color:#808000;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #333300;
+   }
+   50% {
+      background-color:#663a82;
+      border-left:15px solid #ffff00;
+      border-right:15px solid #333300;
+   }
+   60% {
+      background-color:#663a82;
+      border-left:15px solid #cccc00;
+      border-right:15px solid #333300;
+   }
+   70% {
+      background-color:#cccc00;
+      border-left:15px solid #663a82;
+      border-right:15px solid #663a82;
+   }
+   80% {
+      background-color:#663a82;
+      border-left:15px solid #4c4c00;
+      border-right:15px solid #663a82;
+   }
+   90% {
+      background-color:#663a82;
+      border-left:15px solid #333300;
+      border-right:15px solid #808000;
+   }
+   100% {
+      background-color:#4c4c00;
+      border-left:15px solid #333300;
+      border-right:15px solid #663a82;
+   }
+}
+
+
+
+</style>
+    </head>
+    <body>
+    <script>
+        //Thanks for vising my code😁
+//alert("This a tribute page to the one of the best human being through whole mankind Prophet Muhammed ﷺ. The greatest philosopher Tolstoy once said⬇️\n\n\nProphet Muhammad ﷺ was the inspiring prophet and believer. No one can contest this high status. The feelings of equality and fraternity founded by Muhammad among the Islamic bloc were applied in practice even on the Prophet himself.\n\n-Tolstoy\n\n\nHope you enjoy the descriptions as well as my simple coding design. Thanks😊")
+
+window.addEventListener('load', checkJSLoaded)
+
+function checkJSLoaded() {   
+
+var DEBUG = false;
+if(!DEBUG){
+    if(!window.console) window.console = {};
+    var methods = ["log", "debug", "warn", "info"];
+    for(var i=0;i<methods.length;i++){
+        console[methods[i]] = function(){};
+    }
+}
+   };
+    </script>
+     <h3 align="center"> PROPHET MUHAMMED ﷺ (PBUH) </h3>
+     <hr>
+     <br />
+     <div class="section"> 
+      <p> Prophet <strong>Muhammad ﷺ</strong> ( ﻣﺤﻤﺪ ) is the prophet and founder of Islam. According to Islamic doctrine, he was <em> God's Messenger </em>, sent to confirm the essential teachings of monotheism preached previously by Adam (AS), Abraham (AS), Moses (AS), Issah (AS), and other prophets. He is viewed as the final prophet of God in primary <strong> branches of Islam </strong>, though some modern denominations diverge from this belief. <strong>Muhammad ﷺ</strong> united Arabia into a single Muslim polity and ensured that his teachings, practices, and the Quran, formed the basis of Islamic religious belief. <strong>Muhammad ﷺ</strong> was also very religious, occasionally taking journeys of devotion to sacred sites near Mecca. On one of his pilgrimages in 610, he was meditating in a cave on Mount Jabal aI-Nour. The Angel Gabriel appeared and relayed the word of God: “Recite in the name of your Lord who creates, creates man from a clot! Recite for your lord is most generous….” These words became the opening verses of sūrah (chapter) 96 of the Qur'an. Most Islamic historians believe <strong>Muhammad ﷺ</strong> was initially disturbed by the revelations and that he didn’t reveal them publicly for several years. However, Shi’a tradition states he welcomed the message from the Angel Gabriel and was deeply inspired to share his experience with other potential believers.
+
+Islamic tradition holds that the first persons to believe were his wife, Khadija and his close friend Abu Bakr (regarded as the successor to <strong>Muhammad ﷺ</strong> by Sunni Muslims). Soon, <strong>Muhammad ﷺ</strong> began to gather a small following, initially encountering no opposition. Most people in Mecca either ignored him or mocked him as just another prophet. However, when his message condemned idol worship and polytheism, many of Mecca’s tribal leaders began to see <strong>Muhammad ﷺ</strong> and his message as a threat. Besides going against long standing beliefs, the condemnation of idol worship had economic consequences for merchants who catered to the thousands of pilgrims who came to Mecca every year. This was especially true for members of <strong>Muhammad ﷺ</strong>’s own tribe, the Quraysh, who were the guardians of the Kaaba. Sensing a threat, Mecca’s merchants and leaders offered <strong>Muhammad ﷺ</strong> incentives to abandon his preaching, but he refused.
+
+Increasingly, the resistance to <strong>Muhammad ﷺ</strong> and his followers grew and they were eventually forced to emigrate from Mecca to Medina, a city 260 miles to the north in 622. This event marks the beginning of the Muslim calendar. There <strong>Muhammad ﷺ</strong> was instrumental in bringing an end to a civil war raging amongst several of the city’s tribes. <strong>Muhammad ﷺ</strong> settled in Medina, building his Muslim community and gradually gathering acceptance and more followers. The basic theme of Islamic religion are given belows.
+<p align="center">
+    <img src="https://dl.dropbox.com/s/qxtyu1hx1umjx0e/1bBjnj4llT.svg" height="300" width="300"/>
+</p>
+Between 624 and 628, the Muslims were involved in a series of battles for their survival. In the final major confrontation, The Battle of the Trench and Siege of Medina, <strong>Muhammad ﷺ</strong> and his followers prevailed and a treaty was signed. The treaty was broken by the Meccan allies a year later. By now, <strong>Muhammad ﷺ</strong> had plenty of forces and the balance of power had shifted away from the Meccan leaders to him. In 630, the Muslim army marched into Mecca, taking the city with minimum casualties. <strong>Muhammad ﷺ</strong> gave amnesty to many of the Meccan leaders who had opposed him and pardoned many others. Most of the Meccan population converted to Islam. <strong>Muhammad ﷺ</strong> and his followers then proceeded to destroy all of the statues of pagan gods in and around the Kaaba.
+      
+      <p> Born approximately 570 CE ( Year of the Elephant ) in the Arabian city of Mecca, <strong>Muhammad ﷺ</strong> was orphaned at an early age; he was raised under the care of his paternal uncle Abu Talib. Periodically, he would seclude himself in a mountain cave named Hira for several nights of prayer; later, at age 40, he reported being visited by Gabriel in the cave, where he stated he received his first revelation from God. Three years later, in 610, <strong>Muhammad ﷺ</strong> started preaching these revelations publicly, proclaiming that <a href="https://en.m.wikipedia.org/wiki/Tawhid"> <q>God is One</q> </a>, that complete <q>surrender</q> to him is the right course of action, and that he was a prophet and messenger of God, similar to the other prophets in Islam.
+      </p></div> 
+      
+      <h3 align="center"><span> Was Muhammad ﷺ really a prophet?</span></h3>
+      <hr>
+      <br />
+     <div class="section">
+Was he just a convincing fake? How could they find out? These are the questions which the leaders of the Quraish were continuously asking themselves. They finally decided to consult the Jewish rabbis in Yathrib about the problem, since Jews had had more dealings with prophets in the past and the rabbis were knowledgeable in the scriptures. The rabbis advised the Quraish to ask <strong>Muhammad ﷺ</strong> three questions. If he knew the answers to those questions, then he was truly a prophet. The first question was about some young men of long ago, who had left their people and had had a wondrous experience. The second question was about a traveler who had journeyed to the ends of the earth in the east and the west. The third question was about the Spirit, and what it was.<br><br />
+
+<b>Quraish hurriedly sent messengers to <strong>Muhammad ﷺ</strong> to ask him the three questions.</b> The Prophet told them to return the following day and he would have the answers for them. However, he failed to add, “insha Allah,” that is, “if Allah wills.” By the next day he had not received any revelation to help him answer the questions, and he had to ask the messengers to return the following day. This was repeated for fifteen days, while the people of Mecca laughed at <strong>Muhammad ﷺ</strong>’s inability to answer the three questions. Finally Jibril  appeared to the Prophet, and told him the three answers. He also explained the reason for the delay. In <strong>Surah 18: 23-24,</strong> is the warning that one should not plan to do anything in the future, without saying, insha Allah. All that we hope to do is only accomplished by the will of Allah.<br /><br>
+
+<b>The first question was about some young men who remained steadfast in their worship of one God, while the rest of their people turned to the worship of idols</b>. No one is sure of the number of youth involved. That knowledge is Allah’s alone, although many scholars have disputed over the number. To escape persecution, the young men hid in a cave, where Allah caused them to fall asleep for about three hundred years (only Allah knows the exact length of time). They had a dog with them, and to anyone who happened to see them they would have appeared to be awake, and the person would have been filled with fear of them. When they finally awoke, it seemed to them as if only a short time had passed. It was when one of them was sent down to the town to buy food that they learned they had slept for centuries. The account of these sleepers is in the Quran, <strong>Surah 18:9-25.</strong><br /><br />
+
+<b>The answer to the second question was about a great traveler identified as Zul-Qarnain, “the owner of two horns.”</b> He had great power and had been given the ways and means to do all things. He traveled to the setting of the sun, which set in a murky pool. Nearby there lived a people over whom Zul-Qarnain had authority to punish or reward. He chose to punish those who did wrong and then send them back to Allah to be further punished. Those who believed in Allah and were righteous, would be rewarded. Then he journeyed to the rising of the sun, where he found a people who had been provided with no protection against the sun. Those people he left completely alone. As part of his answer to the second question, <strong>Muhammad ﷺ</strong> gave information about a third journey which Zul-Qarnain made. He traveled to a place between two mountains, where the people understood scarcely anything about Allah. They asked for his help in building a barrier between them and two beings called Yajooj and Majooj. In return for his assistance they promised to pay tribute to him. However he did not desire tribute. He replied that the power which he received from Allah was better than any tribute which they could offer him. And so he helped them erect a barrier of iron and lead, which Yajooj and Majooj were powerless to climb over or dig through. But the Quran warns that on a day appointed by Allah, they would break out of their place of confinement and cause great destruction. This would be one of the signs that the Day of Judgment was near. The story of Zul-Qarnain can be found in the Quran <strong>18:84-103.</strong><br /><br />
+
+<b>The third question, about the Spirit, had the shortest answer.</b> The Quran (<strong>17:85</strong>) says that the Spirit comes by command of Allah, and that mankind does not have the knowledge to fully understand it. The Jews disputed that they had been given full knowledge in the Torah, but Allah tells us that their knowledge is very small, in comparison to Allah’s knowledge, which could not be recorded even if all the trees on earth were pens and all the seas were ink.<br /><br />
+
+Despite <strong>Muhammad ﷺ</strong> having answered all their questions successfully, the rabbis did not recognize him as a prophet, and the Quraishi leaders did not follow the rabbis’ advise to follow him as a prophet. But many other people were convinced and the number of believers increased. As the numbers of believers increased, the opposition felt increasingly threatened and resorted to persecution of the followers of <strong>Muhammad ﷺ</strong>.
+     
+     </div>
+     
+     <h3 align="center"><span> Timeline of Muhammad ﷺ's Life</span></h3>
+     <hr>
+     <br />
+     <div class="section">
+      <ul>
+       <li><strong>c.569:</strong> Death of his father, Abdullah</li>
+       <li><strong>570:</strong> Date of birth:Monday 12 Rabi al Awal in the ancient Arabic calendar (2 June). The date isn't sure. Only Allah subhan knows better. Allahu Alam </li>
+       <li><strong>c.583:</strong> his grandfather transfers him to Syria </li>
+       <li><strong>c.595:</strong> Meets and marries Khadijah </li>
+       <li><strong>c.597:</strong> Birth of Zainab , his first daughter, followed by: Ruqayyah , Umm Kulthum , and Fatima Zahra </li>
+       <li><strong>610:</strong> Qur'anic revelation begins in the Cave of Hira on the Jabaal an Nur the "Mountain of Light" near Mecca </li>
+       <li><strong>610:</strong> At 40 years old Angel Jebreel (Gabriel) said to appear to him on the mountain and call him: The Prophet of Allah </li>
+       <li><strong>610:</strong> Begins in secret to gather followers in
+Mecca </li>
+       <li><strong>613:</strong> Begins spreading message of Islam publicly to all Meccans </li>
+       <li><strong>614:</strong> Heavy persecution of Muslims begins </li>
+       <li><strong>615:</strong> Emigration of a group of Muslims to
+Ethiopia </li>
+       <li><strong>616:</strong> Banu Hashim clan boycott begins </li>
+       <li><strong>619:</strong> The year of sorrows: Khadija (his wife) and Abu Talib (his uncle) die </li>
+       <li><strong>620:</strong> Isra and Mi'raj (reported ascension to heaven to meet God) </li>
+       <li><strong>622:</strong> Hijra , emigration to Medina (called Yathrib) </li>
+       <li><strong>623:</strong> <a href="https://en.m.wikipedia.org/wiki/Battle_of_Badr"> Battle of Badr </a> </li>
+       <li><strong>624:</strong> <a href="https://en.m.wikipedia.org/wiki/Battle_of_Uhud">Battle of Uhud </a> </li>
+       <li><strong>627:</strong> <a href="https://en.m.wikipedia.org/wiki/Battle_of_the_Trench"> Battle of the Trench</a> (also known as the siege of Medina) </li>
+       <li><strong>628:</strong> The Meccan tribe of Quraysh and the Muslim community in Medina signed a 10-year truce called the <a href="https://en.m.wikipedia.org/wiki/Treaty_of_Hudaybiyyah">Treaty of Hudaybiyyah</a></li>
+       <li><strong>629:</strong> Conquest of Mecca </li>
+       <li><strong>632:</strong> Farewell pilgrimage and death, in what is now Saudi Arabia </li> 
+      </ul></div>
+     <h3 align="center"> Wives(Spouses) </h3>
+     <hr>
+     <br />
+     <div class="section">
+      <ol>
+       <li>Khadija bint Khuwaylid</li>
+       <li>Sawda bint Zamʿa</li>
+       <li>Aisha bint Abi Bakr</li>
+       <li>Hafsa bint Umar</li>
+       <li>Zaynab bint Khuzayma</li>
+       <li>Hind bint Abi Umayya</li>
+       <li>Zaynab bint Jahsh</li>
+       <li>Juwayriyya bint al-Harith</li>
+       <li>Ramla bint Abi Sufyan</li>
+       <li>Rayhana bint Zayd</li>
+       <li>Safiyya bint Huyayy</li>
+       <li>Maymunah bint al-Harith</li>
+       <li>Maria al-Qibtiyya</li>
+      </ol></div>
+     <h3 align="center"> Children </h3>
+     <hr>
+     <br />
+     <div class="table-responsive">
+  <!--Table-->
+  <table class="table table-striped">
+
+    <!--Table head-->
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Males</th>
+        <th>Females</th>
+        
+      </tr>
+    </thead>
+    <!--Table head-->
+
+    <!--Table body-->
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Qasim</td>
+        <td>Zainab</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Abdullah</td>
+        <td>Ruqayyah</td>
+        
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>iBrahim</td>
+        <td>Fatimah</td>
+      </tr>
+    </tbody>
+    <!--Table body-->
+  </table>
+  <!--Table-->
+</div>
+     <!-- Footer section -->
+     <em>&copy;All rights reserved by maDCoder💉</em>
+    <p> 
+    <small>To read more on Prophet Muhammed ﷺ checkout <a href="https://en.m.wikipedia.org/wiki/Muhammad">Wikipedia </a></small>
+         </p>
+    </body>
+</html>
