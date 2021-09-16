@@ -1,0 +1,1698 @@
+<!--
+╱╭━━┳━┳━┳╮              
+━┫╱┓┣┳━━━╯                   
+╱╱╱┃┃╯                            
+━┫╱╰┛╯                    
+╱╰━━━╯
+DISCLAIMER: The code is for educational purposes only. You can use it for educational purposes only not for commercial uses. 
+
+I will update the books gradually. Stay tuned! 
+
+Hope you enjoy the descriptions as well as my simple coding design. Thanks😊")
+-->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UnderdogPDf</title>
+        <meta charset="utf-8">
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js" integrity="sha512-ALoawPS0JxHQ+8dGL7htZIlVNRaE/SN9gHD4G8pJJTi9H4BQ/3PjdvhggSGR34g00mvTPFkxQuveQUsJA5664Q==" crossorigin="anonymous"></script>
+        <style>
+            * {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #000;
+ /* -webkit-animation-duration: 4s;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-iteration-count: 1;
+    -mz-animation-duration: 4s;
+    -mz-animation-delay: 1s;
+    -mz-animation-iteration-count: 1;
+    -o-animation-duration: 4s;
+    -o-animation-delay: 1s;
+    -o-animation-iteration-count: 1; */
+}
+
+.navigation {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar-link {
+    float: left;
+    list-style-type: none;
+    box-shadow: 0px 0px 0px Aqua, 0px 0px 10px Aqua, 0px 0px 10px blue, 0px 0px 10px yellow;
+    animation: sunburst 7s infinite;
+}
+
+@-moz-keyframes sunburst {
+  0% { transform: scale(1); }
+  
+  50% { transform: scale(1.05); }
+
+  100% { transform: scale(1); }
+}
+
+@-o-keyframes sunburst {
+  0% { transform: scale(1); }
+  
+  50% { transform: scale(1.05); }
+
+  100% { transform: scale(1); } 
+}
+
+@keyframes sunburst {
+  0% { transform: scale(1); }
+  
+  50% { transform: scale(1.05); }
+
+  100% { transform: scale(1); }
+}
+
+#navigation {
+    min-width: 340px;
+    position: relative;
+    z-index: 1;
+}
+
+.navbar-link a {
+    display: block;
+    padding: 15px;
+    background-color: #000;
+    font-family: Raleway, Arial, sans-serif;
+    font-size:11px;
+    text-decoration: none;
+    color: #fff;
+}
+
+#cover {
+    height: 560px;
+    max-width: 100%;
+    position: relative;
+    background: url("https://www.dropbox.com/s/9gkgp9pespwi47c/j4o.gif?dl=1") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 13% 0%;
+}
+
+h1 {
+    color: #FFF;
+    font-family: "Shadows Into Light";
+    display: block;
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-right: 60px;
+}
+
+.text, .panel {
+    font-family: Raleway, Arial, sans-serif;
+    color: #FFF;
+}
+
+
+.bio{
+    margin: 0;
+    padding:5px;
+    padding-bottom:2px;
+    
+}
+
+.bio1{
+    margin: 0;
+    padding:5px;
+    padding-bottom:2px;
+    
+}
+
+.bio2{
+    margin: 0;
+    padding:5px;
+    padding-bottom:2px;
+    
+}
+
+.bio3{
+    margin: 0;
+    padding:5px;
+    padding-bottom:2px;
+    
+}
+
+.guitars, .amps, .effects, .pickups {
+    list-style-type: circle;
+    margin: 1em;
+    padding: 1em;
+    color: #FFF;
+}
+
+h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+.panel-group .panel-heading {
+    border-bottom: 1px solid;
+    border-bottom-color: #FFF;
+}
+
+.panel, .panel-heading{
+    background-color: #000;
+    border-color: #FFF;
+}
+
+.panel-heading{
+    color: #FFF;
+    text-align: center;
+    padding: 20px;
+}
+
+.panel, .panel-group {
+    margin-bottom: 2px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gear {
+    margin-top: 0px;
+    max-width: 60%;
+    margin: 0px auto 50px auto;
+}
+
+.text-bio {
+    font-size: .9em;
+    letter-spacing: .01em;
+    
+}
+
+footer {
+    margin: 50px auto 50px auto;
+    text-align: center;
+}
+
+span {
+    font-family: "Shadows Into Light";
+}
+
+a:hover {
+    background-color: #111;
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.divider {
+    height: 5px;
+    background-color: #AAA;
+}
+
+.footer-divider {
+    height: 50px;
+    background-color: #AAA;
+}
+
+
+.stars {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #21d190;
+  background-image: linear-gradient(315deg, #21d190 0%, #d65bca 74%);
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+
+.star1 {
+  margin-top: 10%;
+  margin-left: 10%;
+  animation-duration: 2s;
+}
+.star2 {
+  margin-top: 20%;
+  margin-left: 15%;
+  animation-duration: 1s;
+}
+.star3 {
+  margin-top: 25%;
+  margin-left: 30%;
+  animation-duration: 3s;
+}
+.star4 {
+  margin-top: 5%;
+  margin-left: 58%;
+  animation-duration: 1.5s;
+}
+.star5 {
+  margin-top: 15%;
+  margin-left: 20%;
+  animation-duration: 1s;
+}
+.star6 {
+  margin-top: 18%;
+  margin-left: 55%;
+  animation-duration: 2.5s;
+}
+.star7 {
+  margin-top: 13%;
+  margin-left: 40%;
+  animation-duration: 1.5s;
+}
+.star8 {
+  margin-top: 1%;
+  margin-left: 80%;
+  animation-duration: 3.5s;
+}
+.star9 {
+  margin-top: 7%;
+  margin-left: 55%;
+  animation-duration: 4s;
+}
+.star10 {
+  margin-top: 8%;
+  margin-left: 26%;
+  animation-duration: 3.5s;
+}
+
+.star11 {
+  margin-top: 30%;
+  margin-left: 53%;
+  animation-duration: 3.5s;
+}
+
+.star12 {
+  margin-top: 20%;
+  margin-left: 59%;
+  animation-duration: 3.5s;
+}
+
+.star13 {
+  margin-top: 9%;
+  margin-left: 55%;
+  animation-duration: 3.5s;
+}
+
+.star14 {
+  margin-top: 29%;
+  margin-left: 55%;
+  animation-duration: 3.5s;
+}
+
+.star15 {
+  margin-top: 28%;
+  margin-left: 48%;
+  animation-duration: 3.5s;
+}
+
+
+
+@keyframes twinkle {
+  20% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}
+
+section{ 
+color:red;
+text-size:x-large; 
+text-align:center;
+}
+
+a:link {
+    
+    text-decoration: none;
+}
+
+
+#logo { 
+  position: fixed;
+  left:0px;
+  bottom:0px;
+  margin-bottom:10;
+}
+
+/*
+━━━╮""""''''''
+━━╮╰╮┊┊┊┊┊┊
+┊┊╰╮╰━▂▂▂▂┊┊┊┊┊┊
+┊▂╱▔╲▔╱┏┳╮╲┊┊ᶤ.╭╮
+▂╲▂▂╱╲╲╰┻┛╱▔▔▔▔┃
+╲▂▂╱╭╯╱▔▔╱▔▔▔▽▽╯ 
+┊╱╱╭╯╱▔▔▔╲▂▂△▂△╮  Thanks for visiting the 
+━━━╯╱╱╭━━━━━━━━╯   code🖐️
+
+*/
+
+
+        </style>
+    </head>
+    
+       <body>
+       <script>
+           //Thanks for vising my code😁
+//alert("Click on the menu to see the PDF collections or scroll. If you want to download then just click on the download. To be continued! \n\nThanks😊")
+
+
+$("body").css("display", "none")
+$(document).ready(function() {
+    $("body").fadeIn(1600);
+});
+        
+$(document).on('click', '.link', function(event){
+    event.preventDefault();
+
+    $('html, body').animate({
+    scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
+});
+
+//sound function of howler.js
+
+var sound = new Howl({
+  src: ['http://dl.dropbox.com/s/o217b9sdlyj3k6l/Motivational%20Background%20Music%20%28%20256kbps%20cbr%20%29.mp3'],
+  autoplay: true,
+  loop: true,     //for sound looping 
+  volume: .3,
+});
+
+// Clear listener after first call.
+sound.once('load', function(){
+  sound.play();
+});
+
+var DEBUG = false;
+if(!DEBUG){
+    if(!window.console) window.console = {};
+    var methods = ["log", "debug", "warn", "info"];
+    for(var i=0;i<methods.length;i++){
+        console[methods[i]] = function(){};
+    }
+}
+   
+
+/*
+┈┈┈╲┈┈┈┈╱
+ ┈┈╱    ▔╲
+┈┈┃┈▇┈┈▇┈┃
+╭╮┣━━━━━━┫╭╮
+┃┃┃┈┈┈┈┈┈┃┃┃
+╰╯┃┈┈┈┈┈┈┃╰╯
+┈┈╰┓┏━━┓┏╯
+┈┈┈╰╯┈┈╰╯      
+
+😊You r always welcome 😊
+
+The EnD
+
+*/
+
+       </script>
+    <div id="navigation">
+        <ul class="navigation">
+            <li class="navbar-link"><a class="link" href="#bio">Programming!</a></li>
+            <li class="navbar-link"><a class="link" href="#bio3">Science and SciFi!</a></li>
+            <li class="navbar-link"><a class="link" href="#bio1">Mathematics!</a></li>
+        </ul>
+        <li class="navbar-link"><a class="link" href="#bio2">Others!</a></li>
+        </ul>
+    </div>
+
+    <div id="cover">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br/>
+    <br />
+        <p align="center" id="wordscroller" style="color: #FFF; font-weight: bold; font-size: x-large; "></p>  
+<script type="text/javascript">  
+    
+    function scroll(pos)  
+    {  
+        var txt =  "Welcome to the underdog E-Liberary!";  
+        var output = "";  
+        var screen = document.getElementById("wordscroller");  
+        for (var i = 0; i < pos; i++)  
+        {  
+            output += txt.charAt(i);  
+        }  
+        output += txt.charAt(pos);  
+        screen.innerHTML = output;  
+        pos++;  
+        if (pos != txt.length)  
+        {  
+            window.setTimeout(function () { scroll(pos); }, 200);  
+        }  
+        else  
+        {  
+            window.setTimeout(function () { scroll(0); }, 5000);  
+        }  
+    }  
+    scroll(0);  
+</script>  
+    
+    <!--
+         <p class="text text-bio"><a style=" color: #21d190;">
+Programming is the process of creating a set of instructions that tell a computer how to perform a task. Programming can be done using a variety of computer programming languages, such as JavaScript, C, PHP, GO, Python, and C++ etc. Here below is some collection of underdog PDF. That will help you to get the basic. 
+     </a>
+        </p>
+        -->
+    </div>
+<div class="stars star1"></div>
+    <div class="stars star2"></div>
+    <div class="stars star3"></div>
+    <div class="stars star4"></div>
+    <div class="stars star5"></div>
+    <div class="stars star6"></div>
+    <div class="stars star7"></div>
+    <div class="stars star8"></div>
+    <div class="stars star9"></div>
+    <div class="stars star10"></div>
+    <div class="stars star11"></div>
+    <br />
+    
+    <!--Programming-->
+    
+    
+    
+    <div class="bio">
+        <h2 class="text" id="bio">Programming!</h2>
+        <p class="text text-bio"><a style=" color: #60dfcd;">
+Programming is the process of creating a set of instructions that tell a computer how to perform a task. The task may be easy or complicated one. But we need to create the task to control over AI devices and make them able to follow our instructions. Programming is the method how ee teach how to give them task. Programming can be done using a variety of computer programming languages, such as JavaScript, C, PHP, GO, Python, and C++ etc. Here below is some collection of underdog PDF. That will help you to get the basic. <br /><br />
+     </a>
+        </p>
+        
+        <p align="center">
+  <img src="https://www.dropbox.com/s/rivefegkvnf3uni/033ce90f832de5a2bc33e1e25a48a037.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Learning Web Design : A Beginner’s Guide to HTML, CSS, JavaScript, and Web Graphics <br />
+<a style=" color: red;">Year:</a> 2018 <br />
+<a style=" color: red;">Size:</a> 76.02 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 155,867 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Niederst Robbins <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=188549005&h=2cad8eb632e7aae4d523d17731fa58d2&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> html, css <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/37fysizfatj4nc5/a7e24419bc11f786bccebbf50879c6e3.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p><br /><br />
+
+  
+  <p class="text text-bio">
+<a style=" color: red;">Name:</a> Kotlin for Android Developers: Learn Kotlin the Easy Way While Developing an Android App<br />
+<a style=" color: red;">Pages:</a> 724 Pages <br />
+<a style=" color: red;">Year:</a> 2013 <br />
+<a style=" color: red;">Size:</a> 13.86 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 217,089 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Niederst Robbins <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=178205861&h=&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> Technology, Software <br />
+<br />
+<hr>        
+</p><br /><br />
+ 
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/wkbznbh8kioabyj/3f078dba7cdcb24932a76c0e87c6d16b.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p><br /><br />
+
+  
+  <p class="text text-bio">
+<a style=" color: red;">Name:</a> Learning Mobile App Development: A Hands-on Guide to Building Apps with iOS and Android<br />
+<a style=" color: red;">Pages:</a> 464 Pages <br />
+<a style=" color: red;">Year:</a> 2013 <br />
+<a style=" color: red;">Size:</a> 15.23 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 217,089 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Jakob Iversen <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=26950217&h=c021c0affca7af98038a4e78864e67ed&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> Technology, Software <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/kolfblqz401zuvi/e1ec7abe963086aec83a0335c51d2fce.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p><br /><br />
+
+  
+  <p class="text text-bio">
+<a style=" color: red;">Name:</a> PHP, MySQL, JavaScript & HTML5 All-In-One For Dummies<br />
+<a style=" color: red;">Pages:</a> 724 Pages <br />
+<a style=" color: red;">Year:</a> 2013 <br />
+<a style=" color: red;">Size:</a> 13.86 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 217,089 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Niederst Robbins <br />
+<a style=" color: red;">Download Link:</a> <a href="https://khmerbamboo.files.wordpress.com/2014/09/php-mysql-javascript-html5-all-in-one-for-dummies.pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> Technology, Software <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/v9n5sbpx8ntcdhe/0e177e7b5708b28009e0e20dad731a14.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Android Cookbook. Problems and Solutions for Android Developers <br />
+<a style=" color: red;">Year:</a> 2017 <br />
+<a style=" color: red;">Size:</a> 22.81 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 24,353 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Page:</a> 766 Pages <br />
+<a style=" color: red;">Author:</a> Ian F. Darwin <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=184743126&h=6efd2e8b203c91dc8ceb01708a7fb56f&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> accelerated learning <br />
+<br />
+<hr>        
+</p><br /><br />
+
+ 
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/wzo2nvd21nwi1mf/bccef609b14fac26be628b52393c5ca8.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Deep Learning in Python: Master Data Science and Machine Learning with Modern Neural Networks written in Python, Theano, and TensorFlow <br />
+<a style=" color: red;">Year:</a> 2016 <br />
+<a style=" color: red;">Size:</a> 668 KB <br />
+<a style=" color: red;">Worldwide Download:</a> 24,353 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Page:</a> 104 Pages <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=196480537&h=32efaddce1d2f50e3c643d468c821bd4&u=cache&ext=epub">Download</a><br />
+<a style=" color: red;">Tags:</a> accelerated learning <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/rz38mwzmcot7p0q/6b11804596aef6423d5dcb4d4f03b364.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Mastering Machine Learning with Python in Six Steps: A Practical Implementation Guide to Predictive Data Analytics Using Python <br />
+<a style=" color: red;">Year:</a> 2017 <br />
+<a style=" color: red;">Page:</a> 374 Pages <br />
+<a style=" color: red;">Size:</a> 4.37 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 137,367 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Manohar Swamynathan (auth.) <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=168776616&h=4f154daafe4ad5fc8edab88d9a5f57d7&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> Python, theory of machines, python, machine learning <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/vc78yabfsrdwkkt/eac876c2c2da482efb548ce861312712.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p><br /><br />
+
+  
+  <p class="text text-bio">
+<a style=" color: red;">Name:</a> Advanced Data Analytics Using Python: With Machine Learning, Deep Learning and NLP Examples<br />
+<a style=" color: red;">Pages:</a> 195 Pages <br />
+<a style=" color: red;">Year:</a> 2018 <br />
+<a style=" color: red;">Size:</a> 2.18 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 40,994 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Sayan Mukhopadhyay <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=176340634&h=515b546c65f7b0a73152bc41d6b89714&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> machine learning, algorithms, python, machine learning deep work <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/vitnt9x82zv1u9b/4bae40a3e1d7d0da7ddfb09a85ac067b%20%281%29.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p><br /><br />
+
+  
+  <p class="text text-bio">
+<a style=" color: red;">Name:</a> Convolutional Neural Networks in Python: Master Data Science and Machine Learning with Modern Deep Learning in Python, Theano, and TensorFlow (Machine Learning in Python)<br />
+<a style=" color: red;">Pages:</a> 74 Pages <br />
+<a style=" color: red;">Year:</a> 2016 <br />
+<a style=" color: red;">Size:</a> 512 KB <br />
+<a style=" color: red;">Worldwide Download:</a> 9,689 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=196474153&h=9ce59e930229afb2dab105a168f9ffb9&u=cache&ext=epub">Download</a><br />
+<a style=" color: red;">Tags:</a> machine learning, algorithms, python, machine learning deep work <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/cypdv6zfjp5u0q0/8564009a7d3ce3f779e0373927bc9aa7.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p><br /><br />
+
+  
+  <p class="text text-bio">
+<a style=" color: red;">Name:</a> The Essential Guide to HTML5: Using Games to Learn HTML5 and JavaScript<br />
+<a style=" color: red;">Pages:</a> 429 Pages <br />
+<a style=" color: red;">Year:</a> 2018 <br />
+<a style=" color: red;">Size:</a> 8.05 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 31,461 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Jeanine Meyer <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=176312816&h=492e300e8bde696a56196a569f1093c9&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> deep web,  game programming, html5 <br />
+<br />
+<hr>        
+</p><br /><br />
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/bko7ntosdfretyb/329d8bbb90c6de725a50b43db51e235d.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p><br /><br />
+  
+  <p class="text text-bio">
+<a style=" color: red;">Name:</a> Pro HTML5 Games: Learn to Build your Own Games using HTML5 and JavaScript<br />
+<a style=" color: red;">Pages:</a> 432 Pages <br />
+<a style=" color: red;">Year:</a> 2017 <br />
+<a style=" color: red;">Size:</a> 11.4 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 58,480 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Aditya Ravi Shankar <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=158220357&h=69a55ee5b2f0f10b16f53f30f0b32c6a&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> game development, the game, pathfinder <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/ee91aqjul3z57ql/fedff574b2b22f6a107c94c783fdec29.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Build your own 2D Game Engine and Create Great Web Games: Using HTML5, JavaScript, and WebGL <br />
+<a style=" color: red;">Year:</a> 2015 <br />
+<a style=" color: red;">Pages:</a> 481 Pages <br />
+<a style=" color: red;">Size:</a> 8.63 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 26,841 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Kelvin Sung & Jebediah Pavleas & Fernando Arnez & Jason Pace <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=166780734&h=111ffb0cec1a22e4ddc44a484a7e8c68&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> game development, the game, engineering graphics <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/tzg0gvfxygsbrqs/e43bf2d3cea430ca7450ebdd22c5d16e.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Mastering Unix Shell Scripting, 2nd Edition: Bash, Bourne, and Korn Shell Scripting for Programmers, System Administrators, and UNIX Gurus <br />
+<a style=" color: red;">Year:</a> 2008 <br />
+<a style=" color: red;">Page:</a> 1035 Pages <br />
+<a style=" color: red;">Size:</a> 4.28 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 20,720 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Randal K. Michael <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=166724440&h=38dcb90a1694218382fb16bcb6f0a03e&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> unix, bash, bourne <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/856un7n8h9h7a60/4b736f068ef919f5d01a11617984aa50.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Learn Unity 3D Programming with UnityScript. Unity’s JavaScript for Beginners <br />
+<a style=" color: red;">Year:</a> 2014 <br />
+<a style=" color: red;">Size:</a> 18.15 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 15703 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Janine Suvak <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=157835462&h=6bb58bda78f670842a97ba279e164773&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> game development, the game, engineering graphics <br />
+<br />
+<hr>        
+</p><br /><br />
+
+ 
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/2e8a8z3p0ko540m/fd404646f679362e54d28d1388c2fb98.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Learn Unity for 2D Game Development <br />
+<a style=" color: red;">Year:</a> 2013 <br />
+<a style=" color: red;">Pages:</a> 306 Pages <br />
+<a style=" color: red;">Size:</a> 11.12 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 19,289 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Niederst Robbins <br />
+<a style=" color: red;">Download Link:</a> <a href="http://dingli.org/Website/IntroGameProgramming/Resources/Learn%20Unity%20for%202D%20Game%20Development.pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> unity game development <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/6tk8mrokzk8iz12/8810e985276e7ae5aaa5147b3e37d6ff.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Linux® Command Line and Shell Scripting Bible <br />
+<a style=" color: red;">Year:</a> 2014 <br />
+<a style=" color: red;">Page:</a> 818 Pages <br />
+<a style=" color: red;">Size:</a> 17 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 48,913 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Richard Blum <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=26975790&h=6639f74206b3c81123f1d1cde2e8564c&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> linux commands, Linux  linux <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+
+ 
+<p align="center">
+  <img src="https://www.dropbox.com/s/9vyzy45gny27nlx/e725cff6541507a9222b3f539e520b96.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Unity for Absolute Beginners <br />
+<a style=" color: red;">Year:</a> 2014 <br />
+<a style=" color: red;">Pages:</a> 598 Pages <br />
+<a style=" color: red;">Size:</a> 36.85 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 12,917 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Niederst Robbins <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=32683741&h=2d0a54aeccabc138b306b47a72d552c8&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> unity c for beginners <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/7oujn3m7ab12ca5/075a2e2192c81d43b23ab56761cb5e87.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Clean C++: Sustainable Software Development Patterns and Best Practices with C++ 17 <br />
+<a style=" color: red;">Year:</a> 2017 <br />
+<a style=" color: red;">Pages:</a> 299 Pages <br />
+<a style=" color: red;">Size:</a> 5.29 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 31,537 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=59205007&h=18a313b4d61de700ec49face96621e6b&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> software development, beginning c, c11<br />
+<br />
+<hr>        
+</p><br /><br />
+
+ 
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/5ry6b2f6w30lzv9/ed524e93de9fb1634c90d4232a2ba52b.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Beginning Game Development with Python and Pygame <br />
+<a style=" color: red;">Year:</a> 2007 <br />
+<a style=" color: red;">Pages:</a> 342 Pages <br />
+<a style=" color: red;">Size:</a> 8.61 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 15,311 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Download Link:</a> <a href="http://www.sgo.fi/~j/baylie/McGugan%20-%20Beginning%20Game%20Development%20with%20Python%20and%20Pygame%20(Apress,%202007).pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> game development beginning c<br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/dfi0bl93fl98f3s/3a1390d6c0b1bea6543afd64c2ac6da2.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p><br /><br />
+
+  
+  <p class="text text-bio">
+<a style=" color: red;">Name:</a> Mission Python: Code a Space Adventure Game!<br />
+<a style=" color: red;">Pages:</a> 345 Pages <br />
+<a style=" color: red;">Year:</a> 2018 <br />
+<a style=" color: red;">Size:</a> 7.67 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 15,006 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Sean McManu <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=195288780&h=d2432d39038834e58465eb4e6709b5c8&u=cache&ext=epub">Download</a><br />
+<a style=" color: red;">Tags:</a> Technology, Software <br />
+<br />        
+</p><br /><br />
+
+    </div>
+    
+    <div class="container-fluid text-center divider"></div>
+<div class="stars star1"></div>
+    <div class="stars star2"></div>
+    <div class="stars star3"></div>
+    <div class="stars star4"></div>
+    <div class="stars star5"></div>
+    <div class="stars star6"></div>
+    <div class="stars star7"></div>
+    <div class="stars star8"></div>
+    <div class="stars star9"></div>
+    <div class="stars star10"></div>
+    <div class="stars star11"></div>
+    <br />
+   
+   
+   
+   
+    
+    <!--Sci-Fi-->
+    
+    
+    
+    
+    <div class="bio3">
+        <h2 class="text" id="bio3">Science and Sci-Fi!</h2><br />
+             <p class="text text-bio"><a style=" color: #60dfcd;">
+According to britannica.com, Science, any system of knowledge that is concerned with the physical world and its phenomena and that entails unbiased observations and systematic experimentation. In general, a science involves a pursuit of knowledge covering general truths or the operations of fundamental laws. Science fiction is a type of fiction where the stories revolve around science and technology of the future. As exciting as these books can be, it's good to remind your child that while science fiction may be based loosely on scientific truth, it is still fiction. This section is for those science and sci-fi books that are underdog and dont much abt them. CHECK the section, you will like. 
+
+
+<br /><br />
+     </a>
+        </p>
+        
+        <div class="image"><br /><br />
+        
+  <p align="center">
+  <img src="https://www.dropbox.com/s/8caok0vroy6y69e/75bd7f9991bcd42235576120b0cd6bee.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p></div><br /><br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> The Collected Works of Jules Verne: 36 Novels and Short Stories <br />
+<a style=" color: red;">Year:</a> 2009 <br />
+<a style=" color: red;">Pages:</a> 5349 Pages <br />
+<a style=" color: red;">Size:</a> 20.61 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 8,524 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Verne Jules <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=193561292&h=dc61b0c4fb7ec659ee8bcc0842b0c2c5&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> sci-fi, fiction <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/dmb9oxgc2taxpym/16b1da3623f8d4a7a1e93b8e4d2155d1.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Fundamentals of Physics <br />
+<a style=" color: red;">Year:</a> 2015 <br />
+<a style=" color: red;">Size:</a> 51.2 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 416,220 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> David Halliday <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=33735280&h=39e1817b05cf155433309dbb2f3289fe&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> Editor's Picks, Most Popular Academic & Education, physics applied and theoretical <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/hmdba6hlx17wv4u/2df435c6610adcccf746b218c5342de4.jpg?dl=1">class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Encyclopedia of Physical Science (Facts on File Science Library) Volume 1 & 2 <br />
+<a style=" color: red;">Year:</a> 2009 <br />
+<a style=" color: red;">Pages:</a> 767 Pages <br />
+<a style=" color: red;">Size:</a> 58.63 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 13,227 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a>  Joe Rosen & Lisa Quinn Gothard <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=158658697&h=a02e09bfb8fc13006700928ffb9afdb4&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> modern physical organic chemistry, library science <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/8v6wxfv3mgj3zte/d2a40eb1eb2300f5208673d90c88b13e.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Encyclopedia of Weird Westerns: Supernatural and Science Fiction Elements in Novels, Pulps, Comics, Films, Television and Games <br />
+<a style=" color: red;">Pages:</a> 624 Pages <br />
+<a style=" color: red;">Year:</a> 2009 <br />
+<a style=" color: red;">Size:</a> 21.33 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 9,581 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Paul Green <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=178399026&h=4892e2e7a3a0ba14173e99686f4c219c&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> science fiction <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/j2pyd3ev0jcetrn/0ee0e4d1eaa1575408d4f780506d2cd3.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> The Marvel Comics encyclopedia : the definitive guide to the characters of the Marvel universe <br />
+<a style=" color: red;">Year:</a> 2009 <br />
+<a style=" color: red;">Size:</a> 170.58 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 81,269 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Alastair Dougall & Julia March & Marvel Comics Group <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=164340240&h=eb33ea28575c741bfd72cd73ff2fe7c7&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> marvel comics, marvel universe <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+ 
+<p align="center">
+  <img src="https://www.dropbox.com/s/sudv57t4j7d27tr/b4be4dcdd639da88374a2481c63856aa.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Theory of Computer Science (Automata, Languages and Computation) Third Edition <br />
+<a style=" color: red;">Year:</a> 2010 <br />
+<a style=" color: red;">Pages:</a> 434 Pages <br />
+<a style=" color: red;">Size:</a> 16.85 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 120,186 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Niederst Robbins <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=32191342&h=7f4f072ed23324def8ca99d6093a208c&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> automata theory, automata computer science <br />
+<br />
+<hr>        
+</p><br /><br />
+
+ 
+<p align="center">
+  <img src="https://www.dropbox.com/s/ggx4obrjbjm9mxs/f7d919c81f13ef64b8de5c860b2d5832.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> A Brief History of Time <br />
+<a style=" color: red;">Year:</a> 2011 <br />
+<a style=" color: red;">Page:</a> 185 Pages <br />
+<a style=" color: red;">Size:</a> 1.94 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 84,225 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Hawking Stephen & Gardner Grover <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=193703119&h=19bb61d1405c7906e11ef4c0616d87f4&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> a brief history of time, brief history of time <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/teudp035ap5ieuu/dcdf12535516d20e78e3339e8858e72c.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Space, Time and Einstein <br />
+<a style=" color: red;">Year:</a> 2010 <br />
+<a style=" color: red;">Page:</a> 255 Pages <br />
+<a style=" color: red;">Size:</a> 4.01 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 100,952 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=38521903&h=1eefac6deb74a8b2eac90d1159ec451d&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> Astronomy & Space <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+ 
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/j2z2zm86tiurtox/0da6457d3d61d82978db2e2bf2f09815.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Special relativity, electrodynamics, and general relativity : from Newton to Einstein <br />
+<a style=" color: red;">Page:</a> 441 Pages <br />
+<a style=" color: red;">Year:</a> 2018 <br />
+<a style=" color: red;">Size:</a> 4.01 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 7,140 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> John B. <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=189882540&h=2830822f29e5c2eec59de47562dab8b0&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> relativity, gravity <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+ 
+<p align="center">
+  <img src="https://www.dropbox.com/s/dbyhb4halyd7sl8/140368b39f91ecc1e62f71212662e824.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> March's Advanced Organic Chemistry: Reactions, Mechanisms, and Structure, Sixth Edition (March's Advanced Organic Chemistry) <br />
+<a style=" color: red;">Year:</a> 2007 <br />
+<a style=" color: red;">Size:</a> 25.14 MB <br />
+<a style=" color: red;">Page:</a> 2377 Pages MB <br />
+<a style=" color: red;">Worldwide Download:</a> 76,365 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Michael B. Smith & Jerry March <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=161020091&h=c54ac938392717c5b4728411fc7aba82&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> organic chemistry, chemistry, complete chemistry <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+ 
+<p align="center">
+  <img src="https://www.dropbox.com/s/tsne7wfkz6jow9j/4bd2511f249df60453d7af87a24cd71a.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Shriver and Atkins' Inorganic Chemistry, 5th Edition <br />
+<a style=" color: red;">Year:</a> 2009 <br />
+<a style=" color: red;">Page:</a> 851 Pages <br />
+<a style=" color: red;">Size:</a> 30.61 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 45,481 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Peter Atkins & Tina Overton & Jonathan Rourke & Mark Weller & Fraser Armstrong <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=161563417&h=647569fc3f0706dd00fe25c437ba0a39&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> atkins, chemistry textbook, inorganic chemistry <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/nju8y7nuweqxw6x/ec6c0006a4a6e931c6a64eb854f1c6ea.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> A New Biology for the 21st Century <br />
+<a style=" color: red;">Year:</a> 2009 <br />
+<a style=" color: red;">Size:</a> 4.6 MB <br />
+<a style=" color: red;">Page:</a> 113 Pages <br />
+<a style=" color: red;">Worldwide Download:</a> 71,528 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> National Research Council<br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=184443624&h=90da4e3fb080462b77999fefdd111b97&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> biology, new Earth <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+ 
+<p align="center">
+  <img src="https://www.dropbox.com/s/crbcc59v2voq5fg/img_20210828_003703.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Artificial Intelligence and Molecular Biology Artificial Intelligence and Molecular Biology <br />
+<a style=" color: red;">Year:</a> 2004 <br />
+<a style=" color: red;">Pages:</a> 468 Pages <br />
+<a style=" color: red;">Size:</a> 1.57 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 40,866 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Niederst Robbins <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=19786856&h=833e36a65066ff521572c7f4408286bb&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> basic biology, artificial intelligence, molecular biology <br />
+<br />
+
+
+    </div>
+    
+    <div class="container-fluid text-center divider"></div>
+<div class="stars star1"></div>
+    <div class="stars star2"></div>
+    <div class="stars star3"></div>
+    <div class="stars star4"></div>
+    <div class="stars star5"></div>
+    <div class="stars star6"></div>
+    <div class="stars star7"></div>
+    <div class="stars star8"></div>
+    <div class="stars star9"></div>
+    <div class="stars star10"></div>
+    <div class="stars star11"></div>
+    <br />
+    
+    
+    
+  <!---->  
+  <div class="stars star1"></div>
+    <div class="stars star2"></div>
+    <div class="stars star3"></div>
+    <div class="stars star4"></div>
+    <div class="stars star5"></div>
+    <div class="stars star6"></div>
+    <div class="stars star7"></div>
+    <div class="stars star8"></div>
+    <div class="stars star9"></div>
+    <div class="stars star10"></div>
+    <div class="stars star11"></div>
+    <br />
+    
+    
+    
+    
+    
+    <!--Mathematics-->
+    
+    
+    
+    
+    <div class="bio1">
+        <h2 class="text" id="bio1">Mathematics!</h2><br />
+         <p class="text text-bio"><a style=" color: #60dfcd;">
+Mathematicians seek out patterns, formulate new conjectures, and establish truth by rigorous deduction from appropriately chosen axioms and definitions. There is debate over whether mathematical objects such as numbers and points exist naturally or are human creations. The mathematician Benjamin Peirce called mathematics "the science that draws necessary conclusions". Albert Einstein, on the other hand, stated that "as far as the laws of mathematics refer to reality, they are not certain; and as far as they are certain, they do not refer to reality." This section give you the best unpublished and underdog books on mathematics. 
+<br /><br />
+     </a>
+        </p>
+        <div class="image"><br /><br />
+ 
+        
+  <p align="center">
+  <img src="https://www.dropbox.com/s/cjumeh0t9inzv6n/30b2c9d9e603c9318be3e65af176ace0.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p></div><br /><br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Mathematical structures for computer science : discrete mathematics and its applications <br />
+<a style=" color: red;">Year:</a> 2014 <br />
+<a style=" color: red;">Pages:</a> 986 Pages <br />
+<a style=" color: red;">Size:</a> 11.16 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 52,434 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Judith L. Gersting <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=158202395&h=873eff5d8fbcc13cf65b27d8e7db955b&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> computer science, discrete mathematical structure, discrete mathematics <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+ 
+<p align="center">
+  <img src="https://www.dropbox.com/s/g5dvu3eb1qte02o/191d32d37b2393ea720c353c2bf5a5c7.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> DISCRETE MATHEMATICAL STRUCTURES Theory and Applications <br />
+<a style=" color: red;">Year:</a> 2012 <br />
+<a style=" color: red;">Page:</a> 916 Pages <br />
+<a style=" color: red;">Size:</a> 43.56 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 19,883 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=33453962&h=8951074c7f0f2a03de89d056ca981f4a&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> discrete structures, discrete mathematical structure, discrete mathematics <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+
+   
+<p align="center">
+  <img src="https://www.dropbox.com/s/liyw9rtffn0zqdd/8f8f64e362977e0d9ebbab8f776cbe94%20%281%29.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p> <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Introduction to Algorithms 3rd Edition <br />
+<a style=" color: red;">Year:</a> 2015 <br />
+<a style=" color: red;">Size:</a> 5.36 MB <br />
+<a style=" color: red;">Page:</a> 1313 Pages <br />
+<a style=" color: red;">Worldwide Download:</a> 102,326 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Cormen <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=42987274&h=5a440b340cba0e115e259a5ed6db9794&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> algorithms, algorithm <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/qnt6qv5kvhqjp6l/img_20210828_005237.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> The Math Book: From Pythagoras to the 57th Dimension, 250 Milestones in the History of Mathematics ( Sterling Milestones ) <br />
+<a style=" color: red;">Year:</a> 2009 <br />
+<a style=" color: red;">Pages:</a> 534 Pages <br />
+<a style=" color: red;">Size:</a> 47.59 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 21,634 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Clifford A. Pickover <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=156639057&h=f32262250f1a0753edc909b912dcf2bb&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> html, css <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/ptnbpjetvh7a3ie/a9f83c53f53cd30e43fec88373f2899e.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> The Colossal Book of Mathematics: Classic Puzzles, Paradoxes, and Problems <br />
+<a style=" color: red;">Year:</a> 2001 <br />
+<a style=" color: red;">Pages:</a> 742 Pages <br />
+<a style=" color: red;">Size:</a> 25.76 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 11,104 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Martin Gardner <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=157052232&h=b0dca1cc97895c99a725eb543f83e2cd&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> puzzles, paradoxes, mathematics <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+ 
+<p align="center">
+  <img src="https://www.dropbox.com/s/cka533cna2vyznw/7b1eff2d546d8e15b91b51b0c58fcba9.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> The Penguin Book of Curious and Interesting Puzzles <br />
+<a style=" color: red;">Year:</a> 2010 <br />
+<a style=" color: red;">Size:</a> 17.77 MB <br />
+<a style=" color: red;">Page:</a> 391 Pages <br />
+<a style=" color: red;">Worldwide Download:</a> 60,383 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=38381046&h=d5a27d28650547451cd9eb843df48232&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> puzzles, babylon <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/jglarv9umemsszc/79bfb97ac583fb5abd1cc8210c3cd25a.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Leonhard Euler: Mathematical Genius in the Enlightenment <br />
+<a style=" color: red;">Year:</a> 2018 <br />
+<a style=" color: red;">Pages:</a> 690 Pages <br />
+<a style=" color: red;">Size:</a> 5.46 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 6,336 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Calinger & Ronald & Euler & Leonhard <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=158214232&h=ebca9779ea7caf8b9c42fb60425a5924&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> mathematics <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/ssme9p6nlhbw5yq/de52a0e9c1a624cb38847e9f9cfa7754.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Time's Arrow and Archimedes' Point : New Directions for the Physics of Time <br />
+<a style=" color: red;">Year:</a> 1997 <br />
+<a style=" color: red;">Page:</a> 321 Pages <br />
+<a style=" color: red;">Size:</a> 16.41 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 1,113 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Huw Price <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=156618666&h=1021e90a6625b280b8d9aab04dee4140&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> mathematics, time <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/l88ae9u4y628wcb/329759779aa0a664566aa641d62d1f0b.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Pythagoras' Revenge: A Mathematical Mystery <br />
+<a style=" color: red;">Year:</a> 2009 <br />
+<a style=" color: red;">Size:</a> 1.11 MB <br />
+<a style=" color: red;">Page:</a> 202 Pages <br />
+<a style=" color: red;">Worldwide Download:</a> 2,224 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Arturo Sangalli <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=185660630&h=954123b5f0dce8a44afbc1d5dc4ac9ca&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> mathematics, Pythagoras <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+ 
+<p align="center">
+  <img src="https://www.dropbox.com/s/yj6f1ycw4cyyixd/2fb3380c7afce1b4ffd10f2c4496a6ad.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> The Fourth Dimension: Sacred Geometry, Alchemy, and Mathematics <br />
+<a style=" color: red;">Year:</a> 2016 <br />
+<a style=" color: red;">Page:</a> 265 Pages <br />
+<a style=" color: red;">Size:</a> 2.45 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 15,195 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Rudolf Steiner <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=199800357&h=9e140e68d8376e5b25f149886fd5c073&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> sacred geometry <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+ 
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/4hl7awu5y2wfapc/2e571717e581167cb45332785622a1a0.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Mathematics for physics and physicists <br />
+<a style=" color: red;">Year:</a> 2007 <br />
+<a style=" color: red;">Page:</a> 667 Pages <br />
+<a style=" color: red;">Size:</a> 4.8 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 1,882 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Appel W. <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=156759513&h=3da28f25d5b01754f3a0e537feaaac8c&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> mathematics, physics <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/63256wttljc7aq3/cf462b6d6d289104613d626e57c8f5bf%20%281%29.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Game Theory through examples <br />
+<a style=" color: red;">Year:</a> 2014 <br />
+<a style=" color: red;">Page:</a> 308 Pages <br />
+<a style=" color: red;">Size:</a> 4.56 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 4,226 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Prisner & Erich <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=187588157&h=028c0efcf2588582c7b028a144817bb8&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> html, css <br />
+<br />        
+</p><br /><br />
+
+
+
+    </div>
+    
+   <div class="container-fluid text-center divider"></div> 
+    <div class="#"></div>
+  <div class="stars star1"></div>
+    <div class="stars star2"></div>
+    <div class="stars star3"></div>
+    <div class="stars star4"></div>
+    <div class="stars star5"></div>
+    <div class="stars star6"></div>
+    <div class="stars star7"></div>
+    <div class="stars star8"></div>
+    <div class="stars star9"></div>
+    <div class="stars star10"></div>
+    <div class="stars star11"></div>
+    <br />
+    
+    
+    
+    
+    
+    
+    <!--Others!-->
+    
+    
+    
+    
+    
+    
+    <div class="bio2">
+        <h2 class="text" id="bio2">Others!</h2><br />
+         <p class="text text-bio"><a style=" color: #60dfcd;">
+In this section, you can find mixed books. They are very intersting and also has lot of download picks world wide. The section is named others! You find not only english books also other language is available here..<br /><br />
+     </a>
+        </p>
+        <div class="image"><br /><br />
+        
+        
+  <p align="center">
+  <img src="https://www.dropbox.com/s/xhz5w7rbuue95hh/ccfb9116e05192765c2977cecb91cdd3.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p></div><br /><br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Virtual Reality and Augmented Reality: Myths and Realities <br />
+<a style=" color: red;">Year:</a> 2018 <br />
+<a style=" color: red;">Page:</a> 375 Pages <br />
+<a style=" color: red;">Size:</a> 66.23 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 10,459 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Bruno Arnaldi & Pascal Guitton & Guillaume Moreau <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=158323859&h=5681731d3468fa2d2f8b7c8210cc540b&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> myths, augmented reality <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+ 
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/zwf9jcz7rzwj4hb/d3f94a381b595dc7fbf10e710478e943.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> The Handbook of Technical Analysis + Test Bank: The Practitioner's Comprehensive Guide to Technical Analysis <br />
+<a style=" color: red;">Year:</a> 2015 <br />
+<a style=" color: red;">Size:</a> 117.03 MB <br />
+<a style=" color: red;">Page:</a> 980 Pages <br />
+<a style=" color: red;">Worldwide Download:</a> 108,867 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Mark Andrew Lim <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=158013542&h=bfcb5e8d7092692efea50d587ffe724f&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> the dip, money management, technical analysis of the financial markets <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+ 
+<p align="center">
+  <img src="https://www.dropbox.com/s/3nbyfvgroot4pxf/47954e1809eaed50a064c17a9e854396.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Quality Management for the Technology Sector<br />
+<a style=" color: red;">Year:</a> 2000 <br />
+<a style=" color: red;">Pages:</a> 219 Pages <br />
+<a style=" color: red;">Size:</a> 15.33 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 70,865 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Susan Berk <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=159188408&h=421330b960fc7a8d789bdc4b1ab26815&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> technology, manufacturing technology, target high <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+<p align="center">
+  <img src="https://www.dropbox.com/s/imr8yj1abxs5ssa/a40cfba5e83f6ae1365a99aea0b33a33.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> The Basics of Hacking and Penetration Testing, Second Edition: Ethical Hacking and Penetration Testing Made Easy <br />
+<a style=" color: red;">Year:</a> 2013 <br />
+<a style=" color: red;">Page:</a> 283 Pages <br />
+<a style=" color: red;">Size:</a> 4.49 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 67,002 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Patrick Engebretson <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=174996543&h=d6c81b18f09af6db3a1ca81566db0493&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> hacking tools, made easy  hacking <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+
+
+ 
+<p align="center">
+  <img src="https://www.dropbox.com/s/tdl2mty5q57wyc9/img_20210828_023308.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> Llewellyn's Complete Book of Astrology: The Easy Way to Learn Astrology <br />
+<a style=" color: red;">Year:</a> 2007 <br />
+<a style=" color: red;">Size:</a> 5.41 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 37,186 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Niederst Robbins <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=176296156&h=8f8030deaa042d0c9bc37755ae347fa1&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> astrology, astrology books, financial astrology <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+ 
+<p align="center">
+  <img src="https://www.dropbox.com/s/t6y09f9zcq50uhu/375a8b6344db542160174779a17f335d.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p></div><br /><br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> The Anonymous Polymath Who Proved Newton Wrong, Explained How We See, Cured the Sick and Deciphered the Rosetta Stone <br />
+<a style=" color: red;">Year:</a> 2007 <br />
+<a style=" color: red;">Page:</a> 305 Pages <br />
+<a style=" color: red;">Size:</a> 2.08 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 9,476 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> Andrew Robinson <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=158697183&h=8efef5206ea2741618032484ff9c38c9&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> how not to be wrong, anonymous, rosetta stone <br />
+<br />
+<hr>        
+</p><br /><br />
+
+
+ 
+<p align="center">
+  <img src="https://www.dropbox.com/s/bs40mv1si8vlpkd/e457d7e55541fd047f9afcf1a743075c.jpg?dl=1" class="img-responsive center-block" width="320px" height="350px"></p>
+  <br />
+        <p class="text text-bio">
+<a style=" color: red;">Name:</a> The Metaphysical World of Isaac Newton: Alchemy, Prophecy, and the Search for Lost Knowledge <br />
+<a style=" color: red;">Year:</a> 2018 <br />
+<a style=" color: red;">Page:</a> 447 Pages <br />
+<a style=" color: red;">Size:</a> 5.69 MB <br />
+<a style=" color: red;">Worldwide Download:</a> 14,366 <br />
+<a style=" color: red;">Language:</a> English <br />
+<a style=" color: red;">Author:</a> John Chambers <br />
+<a style=" color: red;">Download Link:</a> <a href="https://www.pdfdrive.com/download.pdf?id=195151986&h=109e6623888a1cd40ed28c5dada5e495&u=cache&ext=pdf">Download</a><br />
+<a style=" color: red;">Tags:</a> binomial theorem <br />
+<br />
+    </div>
+    
+    
+    
+    <!--#__________________#-->
+    
+    
+    
+    
+    
+   <!-------> 
+    <div class="container-fluid text-center footer-divider">
+        <blockquote>
+            <p style="font-size:10px;" align="center"><br /> 
+            The fool doth think he is wise, but the wise man knows himself to be a fool.
+
+    </p>
+    <p align="center"> ― William Shakespeare,  As You Like It</p>
+            
+        </blockquote>
+      
+
+    </div>
+    <div class="stars star1"></div>
+    <div class="stars star2"></div>
+    <div class="stars star3"></div>
+    <div class="stars star4"></div>
+    <div class="stars star5"></div>
+    <div class="stars star6"></div>
+    <div class="stars star7"></div>
+    <div class="stars star8"></div>
+    <div class="stars star9"></div>
+    <div class="stars star10"></div>
+    <div class="stars star11"></div>
+    <br />
+    <!------>
+    <footer>
+        <p class="text">
+        Created by: 
+        </p>
+        <p class="text"><span>&copy;Mǟɖ↻ôɖɆⱤ💉</span>-2021<br/>
+       <span>Last Update: 04 Sept, 2021</span> 
+        </p>
+    </footer>
+ <style>
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #000;
+}
+</style>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+    
+  <a href="https://www.sololearn.com/Profile/17782587/?ref=app" target="_blank"><img id="logo" src="https://www.dropbox.com/s/7fexmv0nmizi0ti/5710459c-a621-4587-a190-d003961ec01c_200x200.png?dl=1" width="50px" height=50px""></a>      
+</body> 
+
+</html>
