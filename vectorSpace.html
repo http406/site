@@ -1,0 +1,739 @@
+<!--
+╱╭━━┳━┳━┳╮                🔮🧿Space & Vector
+━┫╱┓┣┳━━━╯                 
+╱╱╱┃┃╯                     
+━┫╱╰┛╯
+╱╰━━━╯
+DISCLAIMER:The code is for educational purposes only. You can use it for educational purposes only not for commercial uses.
+
+
+
+In vector calculus and physics, a vector field is an assignment of a vector to each point in a subset of space. For instance, a vector field in the plane can be visualised as a collection of arrows with a given magnitude and direction, each attached to a point in the plane. Vector fields are often used to model, for example, the speed and direction of a moving fluid throughout space, or the strength and direction of some force, such as the magnetic or gravitational force, as it changes from one point to another point. The elements of differential and integral calculus extend naturally to vector fields. When a vector field represents force, the line integral of a vector field represents the work done by a force moving along a path, and under this interpretation conservation of energy is exhibited as a special case of the fundamental theorem of calculus. Vector fields can usefully be thought of as representing the velocity of a moving flow in space, and this physical intuition leads to notions such as the divergence (which represents the rate of change of volume of a flow) and curl (which represents the rotation of a flow).
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Space & Vector</title>
+        <meta charset="utf-8">
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js" integrity="sha512-ALoawPS0JxHQ+8dGL7htZIlVNRaE/SN9gHD4G8pJJTi9H4BQ/3PjdvhggSGR34g00mvTPFkxQuveQUsJA5664Q==" crossorigin="anonymous"></script>
+        <style>
+            body{
+  background:#000;
+  overflow:hidden;
+  margin:0;
+  padding:0;
+}
+
+canvas{
+  width:100% auto;
+  height:100% auto;
+}
+
+.bubbles.top {
+  height: 100%;
+}
+.bubbles.top > .particle {
+  opacity: 0;
+  position: absolute;
+  background-color: hsla(335, 100%, 55%, 1);
+  animation: bubbles 3s ease-in infinite;
+  border-radius: 100%;
+}
+.bubbles.bottom {
+  height: 50%;
+}
+.bubbles.bottom > .particle {
+  opacity: 0;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  animation: bubbles2 3s ease-in infinite;
+  border-radius: 100%;
+}
+@keyframes bubbles {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translate(50%, -20%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -1000%);
+  }
+}
+@keyframes bubbles2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-100%, 20%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(100%, 1000%);
+  }
+}
+
+
+/*_______*/
+
+#starshine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}    
+    
+.shine {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAMAAACJuGjuAAADAFBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+/LkhhAAAA/3RSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1O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);
+background-repeat: no-repeat;
+background-position:center;
+background-size: 100% 100%;
+  overflow: hidden;
+  z-index: 2;
+  color: tansparent;
+  -moz-opacity: 0.0;
+  opacity: 0.0;
+  animation: glitter 6s linear 0s infinite normal;
+  -webkit-animation: glitter 6s linear 0s infinite normal;
+  -moz-animation: glitter 8s linear 0s infinite normal;
+  -ms-animation: glitter 8s linear 0s infinite normal;
+  -o-animation: glitter 8s linear 0s infinite normal;
+}
+
+.shine.small {
+  width: 20px;
+  height: 20px;
+}
+
+.shine.medium {
+  width: 30px;
+  height: 30px;
+}
+
+.shine.large {
+  width: 50px;
+  height: 50px;
+}
+
+/*CSS3 keyframes for glittering effect*/
+
+@-webkit-keyframes glitter {
+  0% {
+    -webkit-transform: scale(0.3) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    -webkit-transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(0.3) rotate(720deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0.3) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.meteor{
+    position: absolute;
+    top: 5%;
+    left: 70%;
+    width: 7px;
+    height: 7px;
+    border-radius : 50%;
+    background-color: Aqua;
+    background-image: linear-gradient(315deg, #21d190 0%, #d65bca 74%);
+    box-shadow: 0 0 5px 5px white;
+    animation-name: meteoric;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+
+}
+.meteor::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 50px;
+    height: 0;
+    background: white;
+    transform: rotate(-10deg);
+    box-shadow: 10px -5px 20px 10px white;
+}
+
+.stars {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+
+.star1 {
+  margin-top: 10%;
+  margin-left: 10%;
+  animation-duration: 2s;
+}
+.star2 {
+  margin-top: 20%;
+  margin-left: 15%;
+  animation-duration: 1s;
+}
+.star3 {
+  margin-top: 25%;
+  margin-left: 30%;
+  animation-duration: 3s;
+}
+.star4 {
+  margin-top: 5%;
+  margin-left: 40%;
+  animation-duration: 1.5s;
+}
+.star5 {
+  margin-top: 15%;
+  margin-left: 60%;
+  animation-duration: 1s;
+}
+.star6 {
+  margin-top: 18%;
+  margin-left: 65%;
+  animation-duration: 2.5s;
+}
+.star7 {
+  margin-top: 13%;
+  margin-left: 70%;
+  animation-duration: 1.5s;
+}
+.star8 {
+  margin-top: 1%;
+  margin-left: 80%;
+  animation-duration: 3.5s;
+}
+.star9 {
+  margin-top: 7%;
+  margin-left: 90%;
+  animation-duration: 4s;
+}
+.star10 {
+  margin-top: 8%;
+  margin-left: 95%;
+  animation-duration: 3.5s;
+}
+
+.star11 {
+  margin-top: 30%;
+  margin-left: 13%;
+  animation-duration: 3.5s;
+}
+
+.star12 {
+  margin-top: 20%;
+  margin-left: 59%;
+  animation-duration: 3.5s;
+}
+
+.star13 {
+  margin-top: 9%;
+  margin-left: 55%;
+  animation-duration: 3.5s;
+}
+
+.star14 {
+  margin-top: 29%;
+  margin-left: 55%;
+  animation-duration: 3.5s;
+}
+
+.star15 {
+  margin-top: 28%;
+  margin-left: 48%;
+  animation-duration: 3.5s;
+}
+
+
+
+@keyframes twinkle {
+  20% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}
+
+@keyframes meteoric{
+    100%{
+        left: 1%;
+        top: 25%;
+        opacity: 0;
+    }
+}
+
+.redsunthree {
+  position: absolute;  
+  right: 30%; bottom: 26%;
+  z-index: 9999;
+  filter: blur(1.6px);
+  border-radius: 200%;
+  width: 5px; height: 5px;
+background-color: Aqua;
+  box-shadow: 0px 0px 0px Aqua, 0px 0px 20px Aqua, 0px 0px 20px blue, 0px 0px 50px Aqua;
+  animation: blink-animation .1s steps(2, start) infinite;
+  -webkit-animation: blink-animation .1s steps(2, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+    transform: scale(1.05);
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+    transform: scale(2.05);
+  }
+}
+
+.earth {
+  z-index: 9999;
+  position: absolute;
+  top: 55%; left: 0%;
+  width: 13px; height: 13px;
+  filter: blur(.2px);
+  background-color: #21d190;
+background-image: linear-gradient(315deg, #de4256 0%, #b78e51 74%);
+  box-shadow: 0px 0px 0px rgba(255,255,255,0.5), 0px 0px 20px white, 0px 0px 20px #21d190, 0px 0px 50px #21d190;
+  border-radius: 200%;
+/* -webkit-animation: spin-right 20s linear infinite;*/
+  animation: planetcross 9s infinite;
+}
+
+@keyframes planetcross {
+  0% { left: 0%; }
+  
+
+  100% { left: 100%; }
+}
+
+#logo { 
+  position: absolute;
+  right:0px;
+  bottom:0px;
+}
+/*
+━━━╮""""''''''
+━━╮╰╮┊┊┊┊┊┊
+┊┊╰╮╰━▂▂▂▂┊┊┊┊┊┊
+┊▂╱▔╲▔╱┏┳╮╲┊┊ᶤ.╭╮
+▂╲▂▂╱╲╲╰┻┛╱▔▔▔▔┃
+╲▂▂╱╭╯╱▔▔╱▔▔▔▽▽╯ 
+┊╱╱╭╯╱▔▔▔╲▂▂△▂△╮  Thanks for visiting the 
+━━━╯╱╱╭━━━━━━━━╯   code🖐️
+
+*/
+
+
+        </style>
+    </head>
+    <body>
+    <script>
+        //alert("🔮🧿Space and Vector..!\n\n💕 In vector calculus and physics, a vector field is an assignment of a vector to each point in a subset of space. For instance, a vector field in the plane can be visualised as a collection of arrows with a given magnitude and direction, each attached to a point in the plane. Vector fields are often used to model, the speed and direction of a moving fluid throughout space, or the strength and direction of some force, such as the magnetic or gravitational force, as it changes from one point to another point.\n\n👉While click on the screen it will accelerate the field and increase noise.  Enjoy...");
+//DOM loader
+window.addEventListener('load', checkJSLoaded)
+
+function checkJSLoaded() {  
+
+
+var sound = new Howl({
+  src: ['http://dl.dropbox.com/s/4gej8nhazdek75g/Motivational%20Music%20No%20Copyright%20_%20Background%20music%20for%20motivational%20videos%20COPYRIGHT%20FREE%20mfcc%20%28%20256kbps%20cbr%20%29.mp3'],
+  autoplay: true,
+  loop: true,     //for sound looping 
+  volume: .3,
+});
+
+// Clear listener after first call.
+sound.once('load', function(){
+  sound.play();
+});
+
+$(function() {
+  var body = $('#starshine'),
+      template = $('.template.shine'),
+      stars =  20,
+      sparkle = 10;
+  
+    
+  var size = 'small';
+  var createStar = function() {
+    template.clone().removeAttr('id').css({
+      top: (Math.random() * 200) + '%',
+      left: (Math.random() * 200) + '%',
+      webkitAnimationDelay: (Math.random() * sparkle) + 's',
+      mozAnimationDelay: (Math.random() * sparkle) + 's'
+    }).addClass(size).appendTo(body);
+  };
+ 
+  for(var i = 0; i < stars; i++) {
+    if(i % 2 === 0) {
+      size = 'small';
+    } else if(i % 3 === 0) {
+      size = 'medium';
+    } else {
+      size = 'large';
+    }
+    
+    createStar();
+  }
+});
+
+function normalizeVec(vec){
+  var d = Math.sqrt( (vec.x * vec.x) + (vec.y * vec.y) );
+
+  var dx = vec.x / d *5;
+  var dy = vec.y / d *5;
+
+  return {
+    x : dx, 
+    y : dy
+  }
+}
+
+function normalize(floater){
+  var d = Math.sqrt( (floater * floater) );
+
+  var dfloater = floater / d;
+
+  return dfloater;
+}
+
+
+function getCoor(a,b,t){
+  var x = Math.sin(3.098 * a - (opt.mouse.pos.x*.066) + t * 15 ) ;
+  var y = Math.cos(3.098 * b - (opt.mouse.pos.y*.066) + t * 15 ) ;
+
+  return {
+    x : x,
+    y : y
+  }
+}
+
+//______________________________________________ Variables
+var stage = {
+  x : window.innerWidth/2 * window.devicePixelRatio,
+  y : window.innerHeight/2 * window.devicePixelRatio
+}
+
+var canvas = document.createElement('canvas');
+canvas.width = stage.x;
+canvas.height = stage.y;
+document.body.appendChild(canvas);
+
+var c = canvas.getContext("2d");
+    c.fillStyle = '#000';
+    c.strokeStyle = 'hsl(' + 5000 * Math.random() + ', 150%, 50%)';
+
+var grid = [];
+var opt = {
+  index : 10,
+  count : 20,
+  mouse : {
+    start : {
+      x : 10,
+      y : 20,
+    },
+    delta : {
+      x : 50,
+      y : 50
+    },
+    pos : {
+      x : 20,
+      y : 30
+    },
+    down : true
+  }
+}
+
+for(var x = 0; x < Math.floor(stage.x / opt.count) + .5; x++){
+  for(var y = 0; y < Math.floor(stage.y / opt.count) + .5; y++){
+    grid.push({
+      x : x * opt.count,
+      y : y * opt.count,
+      vel : {
+        x : 0,
+        y : 0
+      }
+    });
+  }
+}
+
+//______________________________________________ draw
+
+function draw(time){
+  var i = 0;
+  for(var x = 0;x < Math.floor(stage.x / opt.count) + 1;x++){
+    for(var y = 0;y < Math.floor(stage.y / opt.count) + 1;y++){
+      var shiftedTime = i  + time;
+      var timeFactor = shiftedTime / 20000 % Math.PI * 20;
+
+      var point = getCoor( grid[i].x, grid[i].y , timeFactor);
+      var pressureColor =  (Math.abs( point.x ) + Math.abs( point.y ) )* 100;
+      
+      c.strokeStyle = 'hsl(' + 5000 * Math.random() + ', 150%, 50%)';
+      grid[i].vel.x = point.x * 5;
+      grid[i].vel.y = point.y * 5;
+
+      c.beginPath();
+      c.moveTo(grid[i].x,grid[i].y);
+      c.lineTo(grid[i].x,grid[i].y);
+      c.lineTo(grid[i].x + grid[i].vel.x  ,grid[i].y + grid[i].vel.y );
+      c.stroke();
+      c.closePath();
+      i++;
+    }
+  }
+}
+
+
+//______________________________________________ events
+
+document.body.addEventListener("mousedown",function(event){
+  opt.mouse.down = true;
+  opt.mouse.start.x = event.pageX;
+  opt.mouse.start.y = event.pageY;
+});
+
+document.body.addEventListener("mousemove",function(event){
+  opt.mouse.pos.x = event.pageX;
+  opt.mouse.pos.y = event.pageY;
+
+  if(opt.mouse.down){
+    opt.mouse.delta.x = opt.mouse.pos.x - opt.mouse.start.x;
+    opt.mouse.delta.y = opt.mouse.pos.y - opt.mouse.start.y;
+  }
+});
+
+document.body.addEventListener("mouseup",function(event){
+  opt.mouse.down = false;
+
+  opt.mouse.delta.x = 0;
+  opt.mouse.delta.y = 0; 
+  
+});
+
+//for iOs
+function check_update_xyra(event, mouse_xyra) {
+  var x, y, r, a;
+  var tgtoffleft = 0;
+  var tgtofftop = 0;
+  var min_r, max_r, width;
+  if(event.touches) {
+    var touches = event.touches;
+    // Bit of code to calculate the actual Left and Top offsets by adding offsets 
+    // of each parent back through the hierarchy
+    var tgt = event.touches[0].target;
+    while (tgt) {
+      tgtoffleft = tgtoffleft + tgt.offsetLeft;
+      tgtofftop = tgtofftop + tgt.offsetTop;
+      tgt = tgt.offsetParent;
+    }
+    // x = (touches[0].pageX - touches[0].target.offsetLeft) - PIVOT_X;
+    // y = PIVOT_Y - (touches[0].pageY - touches[0].target.offsetTop);
+    x = (touches[0].pageX - tgtoffleft) - PIVOT_X;
+    y = PIVOT_Y - (touches[0].pageY - tgtofftop);
+  }
+  else {
+    x = event.offsetX - PIVOT_X;
+    y = PIVOT_Y - event.offsetY;
+  }
+  /* cartesian to polar coordinate conversion */
+  r = Math.sqrt(x * x + y * y);
+  a = Math.atan2(y, x);
+  mouse_xyra.x = x;
+  mouse_xyra.y = y;
+  mouse_xyra.r = r;
+  mouse_xyra.a = a;
+  if((r >= MIN_TOUCH_RADIUS) && (r <= MAX_TOUCH_RADIUS))
+    return true;
+  else
+    return false;
+}
+//_________________________________$           
+            
+//*******************************
+
+// current application time, in milliseconds.
+var applicationTime = 0;    
+// scale applied to time. 
+// 1 means no scale, <1 is slower, >1 faster.
+var timeSpeed = 1;
+
+// after launchAnimation is called, 
+//  draw/handleInput/update will get called on each rAF
+function launchAnimation() {
+    requestAnimationFrame(_launchAnimation);
+}
+
+// ------------- Private methods ----------------
+
+function _launchAnimation(now) {
+    _lastTime = now;
+    applicationTime = 0
+    requestAnimationFrame(_animate);
+}
+
+// ----------------------------------------------
+// Animation.
+//   Use launchAnimate() to start the animation.
+//     draw, handleInput, update will be called every frame.
+// ----------------------------------------------
+function _animate(now) {
+    requestAnimationFrame(_animate);
+    // _______________________
+    var dt = now - _lastTime;
+    if (dt < 12) return; // 60 HZ max
+    if (dt > 200) dt = 16; // consider 1 frame elapse on tab-out 
+    _lastTime = now;
+    dt *= timeSpeed;
+    applicationTime += dt;
+    // _______________________
+    handleInput(); // ...
+    // update everything with this frame time step.
+    update(dt);
+    // draw everything    
+    draw();
+}
+var _lastTime = 0;
+
+
+
+//*******************************
+
+
+window.onresize = function() {
+  stage.x = window.innerWidth*window.devicePixelRatio;
+  stage.y = window.innerHeight*window.devicePixelRatio;
+  grid = [];
+  for(var x = 0; x < Math.floor(stage.x / opt.count) + 1 * 50; x++){
+    for(var y = 0; y < Math.floor(stage.y / opt.count) + 1 * 50; y++){
+      grid.push({
+        x : x * opt.count,
+        y : y * opt.count,
+        vel : {
+          x : 0,
+          y : 0
+        }
+      });
+    }
+  }
+}
+
+
+//______touch______
+function touchStart(evt) {
+  var changedTouches = evt.changedTouches;   
+  for (var i = 0; i < changedTouches.length; i++) {
+    // remember new touches and its key
+    var key = changedTouches[i].target;
+    touches.push({ id : changedTouches[i].identifier, key: key });
+  }
+  updateKeys();
+}
+
+function touchEnd(evt) {
+  var changedTouches = evt.changedTouches;
+  for (var i = 0; i < changedTouches.length; i++) {
+    // Remove this touch
+    var index = getTouchIndex(changedTouches[i].identifier);
+    if (index >= 0) {
+        touches.splice(index, 1);
+    }  
+  }
+  updateKeys();
+}
+//_________touch_____
+
+//___touch2___
+function touchMove(evt) {
+  var changedTouches = evt.changedTouches;
+  for (var i = 0; i < changedTouches.length; i++) {
+    var touch = changedTouches[i];
+    var index = getTouchIndex(touch.identifier);
+    if (index >= 0) {
+      // Update stored key to the new key
+      var key = document.elementFromPoint(touch.pageX, touch.pageY);
+      if (isKey(key))
+        touches[index].key = key;
+    }      
+  }
+  updateKeys();
+}
+//___touch2____
+
+//______________________________________________ render
+var render = function (time) { 
+  requestAnimationFrame( render );
+ c.fillRect(0,0,stage.x,stage.y);
+
+  draw(time);
+};
+
+render();};
+
+
+
+/*
+┈┈┈╲┈┈┈┈╱
+ ┈┈╱    ▔╲
+┈┈┃┈▇┈┈▇┈┃
+╭╮┣━━━━━━┫╭╮
+┃┃┃┈┈┈┈┈┈┃┃┃
+╰╯┃┈┈┈┈┈┈┃╰╯
+┈┈╰┓┏━━┓┏╯
+┈┈┈╰╯┈┈╰╯      
+
+😊You r always welcome 😊
+
+The EnD
+
+*/
+
+
+    </script>
+         <div class="stars star1"></div>
+    <div class="stars star2"></div>
+    <div class="stars star3"></div>
+    <div class="stars star4"></div>
+    <div class="stars star5"></div>
+    <div class="stars star6"></div>
+    <div class="stars star7"></div>
+    <div class="stars star8"></div>
+    <div class="stars star9"></div>
+    <div class="stars star10"></div>
+    <div class="stars star11"></div>
+    <div class="stars star12"></div>
+    <div class="stars star13"></div>
+    <div class="stars star14"></div>
+    <div class="stars star15"></div>
+    <div class="meteor"></div>
+    <div class="redsunthree"></div>
+    <div class="earth"></div>
+        <div id="starshine">
+    <div class="template shine"></div>
+    <a href="https://www.sololearn.com/Profile/17782587/?ref=app" target="_blank"><img id="logo" src="https://www.dropbox.com/s/7fexmv0nmizi0ti/5710459c-a621-4587-a190-d003961ec01c_200x200.png?dl=1" width="50px" height=50px""></a>
+    </body>
+</html>
