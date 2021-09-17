@@ -1,0 +1,793 @@
+<!--
+╱╭━━┳━┳━┳╮               
+━┫╱┓┣┳━━━╯                       
+╱╱╱┃┃╯                              
+━┫╱╰┛╯
+╱╰━━━╯
+DISCLAIMER: The code is for educational purposes only. You can use it for educational purposes only not for commercial uses.
+
+░░╔══╗░░░░░░░░░░╔══╗░░ ░╚╣▐▐╠╝░░╔══╗░░╚╣▐▐╠╝░
+░░╚╦╦╝░░╚╣▌▌╠╝░░╚╦╦╝░░ ░░░╚╚░░░░╚╦╦╝░░░░╚╚░░░
+░░░░░░░░░░╝╝░░░░░░░░░░
+
+💕Detail abt the project: Kepler 452b/Earth 2.0
+
+Kepler-452b (a planet sometimes quoted to be an Earth 2.0 or Earth's Cousin based on its characteristics; also known by its Kepler Object of Interest designation KOI-7016.01) is an exoplanet orbiting the Sun-like star Kepler-452 about 1,402 light-years (430 pc) from Earth in the constellation Cygnus. It was identified by the Kepler space telescope, and its discovery was announced by NASA on 23 July 2015. However, a study in 2018 by Mullally et al. implied that statistically, Kepler-452b has not been proven to exist and must still be considered a candidate. Moreover, its mass of 5 Earth masses increases the possibility that the planet is a mini-Neptune instead of a super-Earth. It is the first potentially rocky super-Earth planet discovered orbiting within the habitable zone of a star very similar to the Sun. The planet is about 1,400 light-years away from the Solar System. At the speed of the New Horizons spacecraft, about 59,000 km/h (37,000 mph), it would take approximately 26 million years to get there.
+
+Characteristics (Mass, radius and temperature):
+Size comparison of Kepler-452 b with Earth.
+Kepler-452b has a probable mass five times that of Earth, and its surface gravity is nearly twice as Earth's, though calculations of mass for exoplanets are only rough estimates. If it is a terrestrial planet, it is most likely a super-Earth with many active volcanoes due to its higher mass and density. The clouds on the planet would be thick and misty, covering much of the surface as viewed from space. The planet takes 385 Earth days to orbit its star. Its radius is 50% bigger than Earth's, and lies within the conservative habitable zone of its parent star. It has an equilibrium temperature of 265 K (−8 °C; 17 °F), a little warmer than Earth. However, since Kepler-452 is nearly 2 billion years older, at approximately 6.5 billion years, the rocky planet's water and atmosphere most likely evaporated. Its surface temperature is estimated to be at 393 K (120 °C; 248 °F).
+
+Host star:
+The host star, Kepler-452, is a G-type is about the same mass of the sun, only 3.7% more massive and 11% larger. It has a surface temperature of 5757 K, nearly the same as the Sun, which has a surface temperature of 5778 K. The star's age is estimated to be about 6.5 billion years old, about 1.9 billion years older than the Sun, which is 4.6 billion years old. From the surface of Kepler-452b, its star would look almost identical to the Sun as viewed from the Earth. The star's apparent magnitude, or how bright it appears from Earth's perspective, is 13.426; therefore, it is too dim to be seen with the naked eye.
+
+Orbit:
+Kepler-452b orbits its host star with an orbital period of 385 days and an orbital radius of about 1.04 AU, nearly the same as Earth's (1 AU). Kepler-452b is most likely not tidally locked and has a circular orbit. Its host star, Kepler-452, is about 20% more luminous than the Sun (L = 1.2 L☉).
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            
+
+html {
+  height: 100%;
+  background: #000 url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
+  cursor: move;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.ceres {
+  width: 25%;
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  top: 20%;
+  right: 50%;
+  transform: translate(-50%, 0);
+  animation: mars 3600s infinite linear;
+  
+}
+@keyframes mars {
+  0% {
+    transform: translate(-50%, 0)rotate(0deg);
+  }
+  
+ 
+  
+  100% {
+    transform: translate(-50%, 0)rotate(360deg);
+  }
+}
+
+.redsun {
+  position: absolute;  
+  left: 15%; top: 15%;
+  z-index: -999999;
+  border-radius: 200%;
+  width: 15px; height: 15px;
+  background: LemonChiffon;
+  filter: blur(2.3px);
+  box-shadow: 0px 0px 0px rgba(255,255,255,0.5), 0px 0px 50px LemonChiffon, 0px 0px 50px yellow, 0px 0px 50px LemonChiffon;
+  animation: sunburst 7s infinite;
+  
+}
+
+@-webkit-keyframes sunburst {
+   0% { transform: scale(1); }
+  
+  50% { transform: scale(1.05); }
+
+  100% { transform: scale(1); }
+}
+
+@-moz-keyframes sunburst {
+  0% { transform: scale(1); }
+  
+  50% { transform: scale(1.05); }
+
+  100% { transform: scale(1); }
+}
+
+@-o-keyframes sunburst {
+  0% { transform: scale(1); }
+  
+  50% { transform: scale(1.05); }
+
+  100% { transform: scale(1); } 
+}
+
+@keyframes sunburst {
+  0% { transform: scale(1); }
+  
+  50% { transform: scale(1.05); }
+
+  100% { transform: scale(1); }
+}
+
+.silhouette-green {
+  background-color: #000700;
+}
+
+.tiny {
+  width: 1px;
+  height: 1px;
+}
+
+.white {
+  background: white;
+}
+
+
+.round {
+  border-radius: 50%;
+}
+
+.star {
+  border-radius: 100%;
+}
+
+
+.planet91{
+    position:fixed;
+    z-index:20;
+    top:210px;
+    right: 180px;
+    width:25%;
+    height:25%; background-image:url("https://www.dropbox.com/s/cb6zms2zhpgk3g1/unnamed%20%284%29.gif?dl=1");
+    background-repeat:no-repeat;
+    background-size:10%;
+    background-color: ;
+    background-position:center;
+    color:transparent;   
+    animation:orbit;
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: 15s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;    
+}    
+
+@keyframes orbit {
+from {width:10%;height:10%;z-index:-20;}    
+25% {width:25%;height:25%;z-index:12;}
+50% {width:50%;height:50%;z-index:25;}
+80% {width:70%;height:70%;z-index:45;}
+to {width:10%;height:10%;z-index:0;}     
+}
+
+.planet98{
+    position:fixed;
+    z-index:20;
+    bottom:250px;
+    left: 180px;
+    width:25%;
+    height:25%; background-image:url("https://www.dropbox.com/s/cb6zms2zhpgk3g1/unnamed%20%284%29.gif?dl=1");
+    background-repeat:no-repeat;
+    background-size:10%;
+    background-color: ;
+    background-position:center;
+    color:transparent;   
+    animation:orbit;
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: 15s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;    
+}    
+
+@keyframes orbit {
+from {width:10%;height:10%;z-index:-20;}    
+25% {width:25%;height:25%;z-index:12;}
+50% {width:50%;height:50%;z-index:25;}
+80% {width:70%;height:70%;z-index:45;}
+to {width:10%;height:10%;z-index:0;}     
+}
+
+.planet99{
+    position:fixed;
+    z-index:20;
+    bottom:150px;
+    left: 18px;
+    width:25%;
+    height:25%; background-image:url("https://www.dropbox.com/s/jbw735p1m0wtiyl/asteroid-clipart-transparent-background-17.gif?dl=1");
+    background-repeat:no-repeat;
+    background-size:10%;
+    background-color: ;
+    background-position:center;
+    color:transparent;   
+    animation:orbit;
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: 15s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;    
+}    
+
+@keyframes orbit {
+from {width:10%;height:10%;z-index:-20;}    
+25% {width:25%;height:25%;z-index:12;}
+50% {width:50%;height:50%;z-index:25;}
+80% {width:70%;height:70%;z-index:45;}
+to {width:10%;height:10%;z-index:0;}     
+}
+
+
+.planet92{
+    position:fixed;
+    z-index:20;
+    bottom:280px;
+    right:50px;
+    width:35%;
+    height:35%; background-image:url("https://www.dropbox.com/s/213henssgj6v5um/LeanPoisedFlamingo-max-1mb.gif?dl=1");
+    background-repeat:no-repeat;
+    background-size:20%;
+    background-color: ;
+    background-position:center;
+    color:transparent;   
+    animation:orbit;
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: 20s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;    
+}    
+
+@keyframes orbit {
+from {width:10%;height:10%;z-index:-10;}    
+25% {width:25%;height:25%;z-index:12;}
+50% {width:50%;height:50%;z-index:25;}
+80% {width:70%;height:70%;z-index:85;}
+to {width:10%;height:10%;z-index:0;}     
+}
+
+
+.planet93{
+    position:fixed;
+    z-index:20;
+    top:228px;
+    left:50px;
+    width:35%;
+    height:35%; background-image:url("https://www.dropbox.com/s/jbw735p1m0wtiyl/asteroid-clipart-transparent-background-17.gif?dl=1");
+    background-repeat:no-repeat;
+    background-size:20%;
+    background-color: ;
+    background-position:center;
+    color:transparent;   
+    animation:orbit;
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: 20s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;    
+}    
+
+@keyframes orbit {
+from {width:10%;height:10%;z-index:-10;}    
+25% {width:25%;height:25%;z-index:12;}
+50% {width:50%;height:50%;z-index:25;}
+80% {width:70%;height:70%;z-index:85;}
+to {width:10%;height:10%;z-index:0;}     
+}
+
+#out{
+    color: red;
+    position: absolute;
+    left:0px;
+    bottom:0px;
+    font-size:2px;
+}
+
+.planet94{
+    position:fixed;
+    z-index:20;
+    top:180px;
+    left:150px;
+    width:35%;
+    height:35%; background-image:url("https://www.dropbox.com/s/cowtfi4regxcsia/tumblr_nxew2qNGlm1twgsxao1_500.gif?dl=1");
+    background-repeat:no-repeat;
+    background-size:20%;
+    background-color: ;
+    background-position:center;
+    color:transparent;   
+    animation:orbit;
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: 20s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;    
+}    
+
+@keyframes orbit {
+from {width:10%;height:10%;z-index:-10;}    
+25% {width:25%;height:25%;z-index:12;}
+50% {width:50%;height:50%;z-index:25;}
+80% {width:70%;height:70%;z-index:85;}
+to {width:10%;height:10%;z-index:0;}     
+}
+
+ .G-lens{
+  position: absolute;  
+  fill: transparent;
+  height:15vh;
+  width:22vh;
+  right:20px;
+  background: url(https://source.unsplash.com/7YiZKj9A3DM
+) center;
+  background-position: top center;
+  
+ /* box-shadow: 0px 0px 0px rgba(255,255,255,0.5), 0px 0px 20px red, 0px 0px 20px yellow, 0px 0px 50px red;*/
+  animation: driving 15s linear infinite;
+  background-repeat: no-repeat;
+  background-size: cover;
+animation: blink 1s linear infinite alternate-reverse;
+}
+
+
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 10;
+    transition: all -1s;
+  }
+}
+
+#logo { 
+  position: absolute;
+  right:0px;
+  bottom:0px;
+}
+
+/*
+━━━╮""""''''''
+━━╮╰╮┊┊┊┊┊┊
+┊┊╰╮╰━▂▂▂▂┊┊┊┊┊┊
+┊▂╱▔╲▔╱┏┳╮╲┊┊ᶤ.╭╮
+▂╲▂▂╱╲╲╰┻┛╱▔▔▔▔┃
+╲▂▂╱╭╯╱▔▔╱▔▔▔▽▽╯ 
+┊╱╱╭╯╱▔▔▔╲▂▂△▂△╮  Thanks for visiting the 
+━━━╯╱╱╭━━━━━━━━╯   code🖐️
+
+*/
+
+
+
+        </style>
+    </head>
+    <body>
+    <script>
+        //alert("🧿📣Intersteller | Kepler 452b/Earth 2.0...\n\n\n\n👉Kepler-452b (a planet sometimes quoted to be an Earth 2.0 or Earth's Cousin based on its characteristics; also known by its Kepler Object of Interest designation KOI-7016.01) is an exoplanet orbiting the Sun-like star Kepler-452 about 1,402 light-years (430 pc) from Earth in the constellation Cygnus.\n\n\n👉Wait for load the music and touch to move the star cluster. Enjoy...");
+
+//DOM loader
+window.addEventListener('load', checkJSLoaded)
+
+function checkJSLoaded() {  
+
+//________replace audio________
+var url = 'http://dl.dropbox.com/s/yu0m9szylkdbbto/Music%20for%20the%20Fearless%20-%20Be%20Bold%20and%20Be%20Brave%20%28%20128kbps%20%29.mp3';
+    window.AudioContext = window.AudioContext||window.webkitAudioContext; //fix up prefixing
+    var context = new AudioContext(); //context
+    var source = context.createBufferSource(); //source node
+    source.connect(context.destination); //connect source to speakers so we can hear it
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true); 
+    request.responseType = 'arraybuffer'; //the  response is an array of bits
+    request.onload = function() {
+        context.decodeAudioData(request.response, function(response) {
+            source.buffer = response;
+            source.start(0); //play audio immediately
+            source.loop = true;
+        }, function () { console.error('The request failed.'); } );
+    }
+    request.send();
+//________________________________________
+
+
+(function makeStars(){
+    // vary size for fun
+  var colors = ['#ffffff','#c9cdff','#ffcac9','#fff9c9'];
+    var divsize = ((Math.random()*2)).toFixed();
+    var color = colors[Math.floor(Math.random()*colors.length)];
+    $newdiv = $('<div/>').addClass("star").css({
+        'width':divsize+'px',
+        'height':divsize+'px',
+        'background-color': color,
+        'box-shadow': '0px 0px ' + (divsize * 5) +'px #fff',
+        'z-index': divsize
+    });
+
+    // make position sensitive to size and document's width
+    var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
+    var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
+
+    $newdiv.css({
+        'position':'absolute',
+        'left':posx+'px',
+        'top':posy+'px',
+        'display':'none'
+    }).appendTo( 'body' ).fadeIn(.001, function(){
+
+      makeStars(); 
+    }); 
+})();
+
+(function makeBrightStars(){
+    // vary size for fun
+  var colors = ['#ffffff','#c9cdff','#ffcac9','#fff9c9'];
+    var divsize = ((Math.random()*3)).toFixed();
+    var color = colors[Math.floor(Math.random()*colors.length)];
+    $newdiv = $('<div/>').addClass("star").css({
+        'width':divsize+'px',
+        'height':divsize+'px',
+        'background-color': color,
+        'box-shadow': '0px 0px ' + (divsize * 5) +'px #fff',
+        'z-index': divsize
+    });
+
+    // make position sensitive to size and document's width
+    var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
+    var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
+
+    $newdiv.css({
+        'position':'absolute',
+        'left':posx+'px',
+        'top':posy+'px',
+        'display':'none'
+    }).appendTo( 'body' ).delay(3500).fadeIn(.1, function(){
+
+      makeBrightStars(); 
+    }); 
+})();
+
+
+//________________
+var num = 100;
+var w = window.innerWidth;
+var h = window.innerHeight;
+var max = 100;
+var _x = 0;
+var _y = 0;
+var _z = 150;
+var dtr = function(d) {
+  return d * Math.PI / 180;
+};
+
+var rnd = function() {
+  return Math.sin(Math.floor(Math.random() * 360) * Math.PI / 180);
+};
+var dist = function(p1, p2, p3) {
+  return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2) + Math.pow(p2.z - p1.z, 2));
+};
+
+var cam = {
+  obj: { x: _x,y: _y, z: _z},
+  dest: {x: 0, y: 0,z: 1},
+  dist: {x: 0,y: 0,z: 200},
+  ang: {cplane: 0,splane: 0,ctheta: 0,stheta: 0},
+  zoom: 1,
+  disp: {x: w / 2,y: h / 2,z: 0},
+  upd: function() {
+    cam.dist.x = cam.dest.x - cam.obj.x;
+    cam.dist.y = cam.dest.y - cam.obj.y;
+    cam.dist.z = cam.dest.z - cam.obj.z;
+    cam.ang.cplane = -cam.dist.z / Math.sqrt(cam.dist.x * cam.dist.x + cam.dist.z * cam.dist.z);
+    cam.ang.splane = cam.dist.x / Math.sqrt(cam.dist.x * cam.dist.x + cam.dist.z * cam.dist.z);
+    cam.ang.ctheta = Math.sqrt(cam.dist.x * cam.dist.x + cam.dist.z * cam.dist.z) / Math.sqrt(cam.dist.x * cam.dist.x + cam.dist.y * cam.dist.y + cam.dist.z * cam.dist.z);
+    cam.ang.stheta = -cam.dist.y / Math.sqrt(cam.dist.x * cam.dist.x + cam.dist.y * cam.dist.y + cam.dist.z * cam.dist.z);
+  }
+};
+
+var trans = {
+  parts: {
+    sz: function(p, sz) {
+      return {
+        x: p.x * sz.x,
+        y: p.y * sz.y,
+        z: p.z * sz.z
+      };
+    },
+    rot: {
+      x: function(p, rot) {
+        return {
+          x: p.x,
+          y: p.y * Math.cos(dtr(rot.x)) - p.z * Math.sin(dtr(rot.x)),
+          z: p.y * Math.sin(dtr(rot.x)) + p.z * Math.cos(dtr(rot.x))
+        };
+      },
+      y: function(p, rot) {
+        return {
+          x: p.x * Math.cos(dtr(rot.y)) + p.z * Math.sin(dtr(rot.y)),
+          y: p.y,
+          z: -p.x * Math.sin(dtr(rot.y)) + p.z * Math.cos(dtr(rot.y))
+        };
+      },
+      z: function(p, rot) {
+        return {
+          x: p.x * Math.cos(dtr(rot.z)) - p.y * Math.sin(dtr(rot.z)),
+          y: p.x * Math.sin(dtr(rot.z)) + p.y * Math.cos(dtr(rot.z)),
+          z: p.z
+        };
+      }
+    },
+    pos: function(p, pos) {
+      return {
+        x: p.x + pos.x,
+        y: p.y + pos.y,
+        z: p.z + pos.z
+      };
+    }
+  },
+  pov: {
+    plane: function(p) {
+      return {
+        x: p.x * cam.ang.cplane + p.z * cam.ang.splane,
+        y: p.y,
+        z: p.x * -cam.ang.splane + p.z * cam.ang.cplane
+      };
+    },
+    theta: function(p) {
+      return {
+        x: p.x,
+        y: p.y * cam.ang.ctheta - p.z * cam.ang.stheta,
+        z: p.y * cam.ang.stheta + p.z * cam.ang.ctheta
+      };
+    },
+    set: function(p) {
+      return {
+        x: p.x - cam.obj.x,
+        y: p.y - cam.obj.y,
+        z: p.z - cam.obj.z
+      };
+    }
+  },
+  persp: function(p) {
+    return {
+      x: p.x * cam.dist.z / p.z * cam.zoom,
+      y: p.y * cam.dist.z / p.z * cam.zoom,
+      z: p.z * cam.zoom,
+      p: cam.dist.z / p.z
+    };
+  },
+  disp: function(p, disp) {
+    return {
+      x: p.x + disp.x,
+      y: -p.y + disp.y,
+      z: p.z + disp.z,
+      p: p.p
+    };
+  },
+  steps: function(_obj_, sz, rot, pos, disp) {
+    var _args = trans.parts.sz(_obj_, sz);
+    _args = trans.parts.rot.x(_args, rot);
+    _args = trans.parts.rot.y(_args, rot);
+    _args = trans.parts.rot.z(_args, rot);
+    _args = trans.parts.pos(_args, pos);
+    _args = trans.pov.plane(_args);
+    _args = trans.pov.theta(_args);
+    _args = trans.pov.set(_args);
+    _args = trans.persp(_args);
+    _args = trans.disp(_args, disp);
+    return _args;
+  }
+};
+
+(function() {
+ 
+    var threeD = function(param) {
+    this.transIn = {};
+    this.transOut = {};
+    this.transIn.vtx = (param.vtx);
+    this.transIn.sz = (param.sz);
+    this.transIn.rot = (param.rot);
+    this.transIn.pos = (param.pos);
+  };
+
+  threeD.prototype.vupd = function() {
+    this.transOut = trans.steps(
+      this.transIn.vtx,
+      this.transIn.sz,
+      this.transIn.rot,
+      this.transIn.pos,
+      cam.disp
+    );
+  };
+
+  var Build = function() {
+    this.vel = 0.04;
+    this.lim = 360;
+    this.diff = 200;
+    this.initPos = 100;
+    this.toX = _x;
+    this.toY = _y;
+    this.go();
+  };
+  
+  var startTime = new Date().getTime();
+var frames = 0;
+var out = document.getElementById("out");
+
+function loop(time) {
+  
+  requestAnimationFrame(loop);
+  
+  frames++;
+  
+  var nowTime = new Date().getTime();
+  var average = (nowTime - startTime) / frames;
+  out.innerHTML = (time/frames) + "<br>" +average;
+
+}
+
+loop();
+
+  Build.prototype.go = function() {
+    this.canvas = document.getElementById("canv");
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+    this.$ = canv.getContext("2d");
+   // this.$.globalCompositeOperation = 'source-over';
+    this.varr = [];
+    this.dist = [];
+    this.calc = [];
+
+    for (var i = 0, len = num; i < len; i++) {
+      this.add();
+    }
+
+    this.rotObj = {x: 0,y: 0,z: 0};
+    this.objSz = {x: w / 5,y: h / 5,z: w / 5};
+  };
+
+  Build.prototype.add = function() {
+    this.varr.push(new threeD({
+      vtx: {x: rnd(),y: rnd(),z: rnd()},
+      sz: {x: 0,y: 0,z: 0},
+      rot: {x: 20,y: -20,z: 0},
+      pos: {
+        x: this.diff * Math.sin(360 * Math.random() * Math.PI / 180),
+        y: this.diff * Math.sin(360 * Math.random() * Math.PI / 180),
+        z: this.diff * Math.sin(360 * Math.random() * Math.PI / 180)
+      }
+    }));
+    this.calc.push({
+      x: 720 * Math.random(),
+      y: 720 * Math.random(),
+      z: 720 * Math.random()
+    });
+  };
+
+  Build.prototype.upd = function() {
+    cam.obj.x += (this.toX - cam.obj.x) * 0.05;
+    cam.obj.y += (this.toY - cam.obj.y) * 0.05;
+  };
+
+  Build.prototype.draw = function() {
+    this.$.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    cam.upd();
+    this.rotObj.x += 0.1;
+    this.rotObj.y += 0.1;
+    this.rotObj.z += 0.1;
+
+    for (var i = 0; i < this.varr.length; i++) {
+      for (var val in this.calc[i]) {
+        if (this.calc[i].hasOwnProperty(val)) {
+          this.calc[i][val] += this.vel;
+          if (this.calc[i][val] > this.lim) this.calc[i][val] = 0;
+        }
+      }
+
+      this.varr[i].transIn.pos = {
+        x: this.diff * Math.cos(this.calc[i].x * Math.PI / 180),
+        y: this.diff * Math.sin(this.calc[i].y * Math.PI / 180),
+        z: this.diff * Math.sin(this.calc[i].z * Math.PI / 180)
+      };
+      this.varr[i].transIn.rot = this.rotObj;
+      this.varr[i].transIn.sz = this.objSz;
+      this.varr[i].vupd();
+      if (this.varr[i].transOut.p < 0) continue;
+   
+      var g = this.$.createRadialGradient(this.varr[i].transOut.x, this.varr[i].transOut.y, this.varr[i].transOut.p, this.varr[i].transOut.x, this.varr[i].transOut.y, this.varr[i].transOut.p*2);
+      
+       this.$.globalCompositeOperation = 'lighter';
+       g.addColorStop(0, 'hsla(255, 255%, 255%, 1)');
+        g.addColorStop(.5, 'hsla('+(i+2)+',85%, 40%,1)');
+        g.addColorStop(1,'hsla('+(i)+',85%, 40%,.5)');
+        
+        this.$.globalCompositeOperation = 'lighter';
+      
+       this.$.fillStyle= g;
+      this.$.beginPath();
+      this.$.arc(this.varr[i].transOut.x, this.varr[i].transOut.y, this.varr[i].transOut.p * 1.3, 0, Math.PI * 4, false);
+      this.$.fill();
+      this.$.closePath();
+    }
+  };
+  Build.prototype.anim = function() {
+    window.requestAnimationFrame = (function() {
+      return window.requestAnimationFrame ||
+        function(callback, element) {
+        window.setTimeout(callback, 1000 / 60);
+      };
+    })();
+    var anim = function() {
+      this.upd();
+      this.draw();
+      window.requestAnimationFrame(anim);
+    }.bind(this);
+    window.requestAnimationFrame(anim);
+  };
+
+  Build.prototype.run = function() {
+    this.anim();
+
+    window.addEventListener('mousemove', function(e) {
+      this.toX = (e.clientX - this.canvas.width / 2) * -0.98;
+      this.toY = (e.clientY - this.canvas.height / 2) * 0.98;
+    }.bind(this));
+    window.addEventListener('touchmove',function(e){
+    
+      this.toX = (e.touches[0].clientX - this.canvas.width / 2) * -0.98;
+      this.toY = (e.touches[0].clientY - this.canvas.height / 2) * 0.98;
+    }.bind(this));
+    window.addEventListener('mousedown', function(e) {
+      for (var i = 0; i < 100; i++) {
+        this.add();
+      }
+    }.bind(this));
+    window.addEventListener('touchstart', function(e) {
+      
+      for (var i = 0; i < 100; i++) {
+        this.add();
+      }
+    }.bind(this));
+  };
+  var app = new Build();
+  app.run();
+})();
+
+window.addEventListener('resize',function(){
+
+ canvas.width = w = window.innerWidth;
+ canvas.height = h = window.innerHeight;
+}, true);
+
+};
+
+/*
+┈┈┈╲┈┈┈┈╱
+ ┈┈╱    ▔╲
+┈┈┃┈▇┈┈▇┈┃
+╭╮┣━━━━━━┫╭╮
+┃┃┃┈┈┈┈┈┈┃┃┃
+╰╯┃┈┈┈┈┈┈┃╰╯
+┈┈╰┓┏━━┓┏╯
+┈┈┈╰╯┈┈╰╯      
+
+😊You r always welcome 😊
+
+The EnD
+
+*/
+
+
+    </script>
+    <div class="G-lens"></div>
+    <div id='out'></div>
+    <div class= "planet91" ></div>
+    <div class= "planet98" ></div>
+    <div class= "planet99" ></div>
+  <div class= "planet92" ></div>
+  <div class= "planet93" ></div>
+  <div class= "planet94" ></div>
+    <div class="redsun"></div>
+<img class="ceres" src="https://www.dropbox.com/s/sf9q7gqav1g2ij1/CC_20201204_202734.png?dl=1" alt="" />        
+<div class="silhouette-green"></div>
+<canvas id="canv"></canvas>
+
+<a href="https://www.sololearn.com/Profile/17782587/?ref=app" target="_blank"><img id="logo" src="https://www.dropbox.com/s/7fexmv0nmizi0ti/5710459c-a621-4587-a190-d003961ec01c_200x200.png?dl=1" width="50px" height=50px""></a>
+    </body>
+</html>
