@@ -1,1 +1,1 @@
-# solomadcoder.github.io
+# MADCoding.github.io
